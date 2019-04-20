@@ -75,13 +75,14 @@
 //   console.log('Express server listening on port ' + app.get('port'));
 // });
 
-var express=require("express");
-var app=express();
+// var express=require("express");
+// var app=express();
 
-app.get('/',function(req,res){
-  res.send("its node js ");
-})
+// app.get('/',function(req,res){
+//   res.send("its node js ");
+// })
 
-app.listen(3000,function(){
-  console.log("The port is 3000");
-})
+// app.listen(3000,function(){
+//   console.log("The port is 3000");
+// })
+console.log("node js");
