@@ -1,3 +1,54 @@
+const express=require('express');
+const mysql=require('mysql');
+
+const bodyparser = require('body-parser');
+
+
+
+
+
+const app=express();
+app.use(bodyparser.json());
+
+var db = mysql.createConnection({
+    host     : '13.234.179.251',
+    user     : 'testuser',
+    password : 'password',
+    database : 'testing',
+    multipleStatements: true
+  });
+
+  app.get('/employee',(req,res)=>{
+    
+    db.query('SELECT * FROM testings',(err,rows,fields)=>{
+        if(!err)
+        res.send(rows[0]);
+        else
+        console.log('err');
+
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // var express = require('express');
 // var routes = require('./routes');
 // var tasks = require('./routes/tasks');
@@ -75,14 +126,14 @@
 //   console.log('Express server listening on port ' + app.get('port'));
 // });
 
-var express=require("express");
-var app=express();
+// var express=require("express");
+// var app=express();
 
-app.get('/api',function(req,res){
-  res.send("its node js ");
-})
+// app.get('/api',function(req,res){
+//   res.send("its node js ");
+// })
 
-app.listen(3000,function(){
-  console.log("The port is 3000");
-})
+// app.listen(3000,function(){
+//   console.log("The port is 3000");
+// })
 //console.log("node js");
