@@ -18,6 +18,16 @@ var db = mysql.createConnection({
     multipleStatements: true
   });
 
+
+db.connect((err)=>{
+    if(err){
+       // throw err;
+       console.log("no connect"+err);
+    }
+    console.log("My sql is connected");
+});
+
+
   app.get('/employee',(req,res)=>{
     
     db.query('SELECT * FROM testings',(err,rows,fields)=>{
