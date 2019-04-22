@@ -133,7 +133,7 @@ var db = mysql.createConnection({
 //   res.send("its node js ");
 // })
 
-// app.listen(3000,function(){
-//   console.log("The port is 3000");
-// })
+app.listen(3000,function(){
+  console.log("The port is 3000");
+})
 //console.log("node js");
