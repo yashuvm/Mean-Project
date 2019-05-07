@@ -9,6 +9,7 @@
     $scope.clicked = function(){
       alert("Confirm Registration");
   }
+  
     };
 
     registrationController.$inject = injectParams;

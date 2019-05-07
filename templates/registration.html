@@ -8,30 +8,39 @@
                       <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active">
                           <a class="persistant-disabled" href="#stepper-step-1" data-toggle="tab" aria-controls="stepper-step-1" role="tab" title="Step 1">
-                            <span class="round-tab">1</span>
+                            <span class="round-tab">1 Basic Informatoion</span>
+                            
                           </a>
+                         <br>
+                         <br>
                         </li>
                         <li role="presentation" class="disabled">
                           <a class="persistant-disabled" href="#stepper-step-2" data-toggle="tab" aria-controls="stepper-step-2" role="tab" title="Step 2">
-                            <span class="round-tab">2</span>
+                            <span class="round-tab">2 Personal Details</span>
                           </a>
+                          <br>
+                          <br>
                         </li>
                         <li role="presentation" class="disabled">
                           <a class="persistant-disabled" href="#stepper-step-3" data-toggle="tab" aria-controls="stepper-step-3" role="tab" title="Step 3">
-                            <span class="round-tab">3</span>
+                            <span class="round-tab">3 Emergency Details</span>
                           </a>
+                          <br>
+                          <br>
                         </li>
                         <li role="presentation" class="disabled">
                                 <a class="persistant-disabled" href="#stepper-step-4" data-toggle="tab" aria-controls="stepper-step-4" role="tab" title="Step 4">
-                                  <span class="round-tab">4</span>
+                                  <span class="round-tab">4 Medical Details </span>
                                 </a>
+                                <br>
+                                <br>
                               </li>
                         <li role="presentation" class="disabled">
                           <a class="persistant-disabled" href="#stepper-step-5" data-toggle="tab" aria-controls="stepper-step-5" role="tab" title="Complete">
-                            <span class="round-tab">5</span>
+                            <span class="round-tab">5 Register</span>
                           </a>
-                        </li>
-                        
+                          <br><br>
+                        </li> 
                       </ul>
                       <form role="form">
                         <div class="tab-content">
@@ -102,12 +111,20 @@
                             </ul>
                           </div>
                           <div class="tab-pane fade" role="tabpanel" id="stepper-step-2">
-                            <h3 class "h2">Personal Details</h3>  
+                                <ul class="list-inline pull-right">
+                                        <li>
+                                          <a class="btn btn-default prev-step" style="color:black;">Back</a>
+                                        </li>
+                                        <li>
+                                          <a class="btn btn-primary next-step">Next</a>
+                                        </li>
+                                      </ul>
+                            <h3 class "h2">Personal Details</h3>   
                             <div class="sparkline12-graph">
-                              <div class="basic-login-form-ad">
-                                  <div class="row">
+                              <div class="basic-login-form-ad">  
+                                  <div class="row">    
                                       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                          <div class="all-form-element-inner">
+                                          <div class="all-form-element-inner">  
                                               <form action="#">
                                                   <div class="form-group-inner">
                                                       <div class="row">
@@ -127,6 +144,16 @@
                                                           </div>
                                                       </div>
                                                   </div>
+                                                  <div class="form-group-inner">
+                                                    <div class="row">
+                                                        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                            <label class="login2 pull-right pull-right-pro">Email-ID</label>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                                <input type="text" class="form-control" placeholder="abcd@gmail.com"/>
+                                                            </div>
+                                                    </div>
+                                                </div>
                                                   <div class="form-group-inner">
                                                       <div class="row">
                                                           <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
@@ -328,18 +355,15 @@
 
                                                           <div class="form-group data-custon-pick" id="data_1">
                                                               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
-                                                            
                                                               <label class="login2 pull-right pull-right-pro"><b>Date Of Birth</b></label>
                                                               </div>
                                                               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
-                                                            
                                                               <div class="input-group date">
                                                                   <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
                                                                   <input type="text" class="form-control" value="10/04/2017">
                                                               </div>
                                                               </div>
                                                              </div> 
-                                                              
                                                           </div>
                                                       </div> 
                                                       <br>
@@ -353,7 +377,7 @@
                                                                           <select class="form-control custom-select-value" name="account">
                                                                                   <option>Male</option>
                                                                                   <option>Female</option>
-                                                                                 
+                                                                                  <option>Others</option>
                                                                               </select>
                                                                       </div>
                                                           </div>    
@@ -480,9 +504,31 @@
                                                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
                                                                 <input type="text" class="form-control" Value="Age" readonly/>
                                                             </div> 
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                                                 <input type="text" class="form-control" Value="Relationship" readonly/>
                                                             </div> 
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <input type="text" class="form-control" value="Remarks and Contact No." readonly/>
+                                                            </div> 
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                <label class="login2 pull-right pull-right-pro"></label>
+                                                            </div>
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <input type="text" class="form-control"/>
+                                                            </div> 
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
+                                                                <input type="text" class="form-control"/>
+                                                            </div> 
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                <input type="text" class="form-control"/>
+                                                            </div> 
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <input type="text" class="form-control"/>
+                                                            </div> 
                                                           
                                                         </div>
                                                     </div>
@@ -497,21 +543,7 @@
                                                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
                                                                 <input type="text" class="form-control"/>
                                                             </div> 
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <input type="text" class="form-control"/>
-                                                            </div> 
-                                                          
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group-inner">
-                                                        <div class="row">
-                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
-                                                                <label class="login2 pull-right pull-right-pro"></label>
-                                                            </div>
-                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                                <input type="text" class="form-control"/>
-                                                            </div> 
-                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                                                 <input type="text" class="form-control"/>
                                                             </div> 
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -529,6 +561,9 @@
                                                                 <input type="text" class="form-control"/>
                                                             </div> 
                                                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12">
+                                                                <input type="text" class="form-control"/>
+                                                            </div> 
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                                                 <input type="text" class="form-control"/>
                                                             </div> 
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -728,6 +763,23 @@
                                                                 <label class="login2 pull-right pull-right-pro"></label>
                                                             </div>
                                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:150px;">
+                                                                <input type="text" class="form-control" value="Type" readonly/>
+                                                            </div> 
+                                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <input type="text" class="form-control" Value="Details" readonly/>
+                                                            </div> 
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                <input type="text" class="form-control" Value="Value" readonly/>
+                                                            </div> 
+                                                          
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group-inner">
+                                                        <div class="row">
+                                                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:170px;">
+                                                                <label class="login2 pull-right pull-right-pro"></label>
+                                                            </div>
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:150px;">
                                                                 <div class="form-select-list">
                                                                         <select class="form-control custom-select-value" name="account">
                                                                                 <option>House</option>
@@ -738,6 +790,9 @@
                                                                     </div>
                                                         </div>
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                                <input type="text" class="form-control" />
+                                                            </div> 
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                                                 <input type="text" class="form-control" />
                                                             </div> 
                                                             
@@ -762,7 +817,9 @@
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                                 <input type="text" class="form-control" />
                                                             </div> 
-                                                            
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                <input type="text" class="form-control" />
+                                                            </div> 
                                                           
                                                         </div>
                                                     </div>
@@ -784,7 +841,9 @@
                                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                                 <input type="text" class="form-control" />
                                                             </div> 
-                                                            
+                                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                                <input type="text" class="form-control" />
+                                                            </div> 
                                                           
                                                         </div>
                                                     </div>
@@ -806,13 +865,21 @@
                             </ul>
                           </div>
                           <div class="tab-pane fade" role="tabpanel" id="stepper-step-3">
+                                <ul class="list-inline pull-right">
+                                        <li>
+                                          <a class="btn btn-default prev-step" style="color:black;">Back</a>
+                                        </li>
+                                        <li>
+                                          <a class="btn btn-primary next-step">Next</a>
+                                        </li>
+                                      </ul>
                                 <h3 class "h2">Emergency Details</h3>
                                 <div class="form-group-inner">
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="width:300px;">
                                             <label class="login2" style="font-size:15px;color:#ff470d;">Contact 1(Relative/Friend/Neighbour)</label>
                                         </div>
-                                      <hr style="width:69%;">
+                                      <hr style="width:59%;">
                                     </div>
                                 </div>
                                 <div class="form-group-inner">
@@ -836,7 +903,7 @@
                                                     <select class="form-control custom-select-value" name="account">
                                                             <option>Male</option>
                                                             <option>Female</option>
-                                                           
+                                                            <option>Others</option>
                                                         </select>
                                                 </div>
                                     </div>    
@@ -878,7 +945,46 @@
                                 <div class="form-group-inner">
                                     <div class="row">
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                            <label class="login2 pull-right pull-right-pro">Address</label>
+                                        </div>
+                                        
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                <input type="text" class="form-control" placeholder="Address1"/>
+                                            </div>
+                                           
+                                    </div>
+                                </div>
+                                <div class="form-group-inner">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                            <label class="login2 pull-right pull-right-pro"></label>
+                                        </div>
+                                        
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                <input type="text" class="form-control" placeholder="Address2"/>
+                                            </div>
+                                             
+                                    </div>
+                                </div>
+                                <div class="form-group-inner">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
                                             <label class="login2 pull-right pull-right-pro">Mobile No.</label>
+                                        </div>
+                                        
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:105px;">
+                                                <input type="text" class="form-control" placeholder="91"/>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                    <input type="text" class="form-control" placeholder="123456789"/>
+                                                </div>
+                                               
+                                    </div>
+                                </div>
+                                <div class="form-group-inner">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                            <label class="login2 pull-right pull-right-pro">Whatsapp No.</label>
                                         </div>
                                         
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:105px;">
@@ -965,7 +1071,7 @@
                                                     <select class="form-control custom-select-value" name="account">
                                                             <option>Male</option>
                                                             <option>Female</option>
-                                                           
+                                                            <option>Others</option>
                                                         </select>
                                                 </div>
                                     </div>    
@@ -1007,7 +1113,46 @@
                                 <div class="form-group-inner">
                                     <div class="row">
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                            <label class="login2 pull-right pull-right-pro">Address</label>
+                                        </div>
+                                        
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                <input type="text" class="form-control" placeholder="Address1"/>
+                                            </div>
+                                           
+                                    </div>
+                                </div>
+                                <div class="form-group-inner">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                            <label class="login2 pull-right pull-right-pro"></label>
+                                        </div>
+                                        
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                <input type="text" class="form-control" placeholder="Address2"/>
+                                            </div>
+                                             
+                                    </div>
+                                </div>
+                                <div class="form-group-inner">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
                                             <label class="login2 pull-right pull-right-pro">Mobile No.</label>
+                                        </div>
+                                        
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:105px;">
+                                                <input type="text" class="form-control" placeholder="91"/>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                    <input type="text" class="form-control" placeholder="123456789"/>
+                                                </div>
+                                               
+                                    </div>
+                                </div>
+                                <div class="form-group-inner">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                            <label class="login2 pull-right pull-right-pro">Whatsapp No.</label>
                                         </div>
                                         
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:105px;">
@@ -1094,7 +1239,7 @@
                                                     <select class="form-control custom-select-value" name="account">
                                                             <option>Male</option>
                                                             <option>Female</option>
-                                                           
+                                                            <option>Others</option>
                                                         </select>
                                                 </div>
                                     </div>    
@@ -1136,7 +1281,45 @@
                                 <div class="form-group-inner">
                                     <div class="row">
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                            <label class="login2 pull-right pull-right-pro">Address</label>
+                                        </div>
+                                        
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                <input type="text" class="form-control" placeholder="Address1"/>
+                                            </div> 
+                                    </div>
+                                </div>
+                                <div class="form-group-inner">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                            <label class="login2 pull-right pull-right-pro"></label>
+                                        </div>
+                                        
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                <input type="text" class="form-control" placeholder="Address2"/>
+                                            </div>
+                                             
+                                    </div>
+                                </div>
+                                <div class="form-group-inner">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
                                             <label class="login2 pull-right pull-right-pro">Mobile No.</label>
+                                        </div>
+                                        
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:105px;">
+                                                <input type="text" class="form-control" placeholder="91"/>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                    <input type="text" class="form-control" placeholder="123456789"/>
+                                                </div>
+                                               
+                                    </div>
+                                </div>
+                                <div class="form-group-inner">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                            <label class="login2 pull-right pull-right-pro">Whatsapp No.</label>
                                         </div>
                                         
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:105px;">
@@ -1216,10 +1399,49 @@
                                 <div class="form-group-inner">
                                     <div class="row">
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                            <label class="login2 pull-right pull-right-pro">Address</label>
+                                        </div>
+                                        
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                <input type="text" class="form-control" placeholder="Address1"/>
+                                            </div>
+                                           
+                                    </div>
+                                </div>
+                                <div class="form-group-inner">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                            <label class="login2 pull-right pull-right-pro"></label>
+                                        </div>
+                                        
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
+                                                <input type="text" class="form-control" placeholder="Address2"/>
+                                            </div>
+                                             
+                                    </div>
+                                </div>
+                                <div class="form-group-inner">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
                                             <label class="login2 pull-right pull-right-pro">Mobile No.</label>
                                         </div>
                                         
                                         <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12" style="width:105px;">
+                                                <input type="text" class="form-control" placeholder="91"/>
+                                            </div>
+                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                                    <input type="text" class="form-control" placeholder="123456789"/>
+                                                </div>
+                                               
+                                    </div>
+                                </div>
+                                <div class="form-group-inner">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:170px;">
+                                            <label class="login2 pull-right pull-right-pro">Whatsapp No.</label>
+                                        </div>
+                                        
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:105px;">
                                                 <input type="text" class="form-control" placeholder="91"/>
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -1306,12 +1528,14 @@
                                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                 <input type="text" class="form-control" />
                                             </div> 
+                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >    
+                                                <div class="input-group date">
+                                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                    <input type="text" class="form-control" value="10/04/2017">
+                                                </div>
+                                            </div>
                                             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                                                <input type="text" class="form-control" />
-                                            </div> 
-                                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                                                    <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Upload</button>
-                                                          
+                                                    <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Upload</button>        
                                             </div> 
                                           
                                         </div>
@@ -1330,9 +1554,12 @@
                                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                     <input type="text" class="form-control" />
                                                 </div> 
-                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                                                    <input type="text" class="form-control" />
-                                                </div> 
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >    
+                                                    <div class="input-group date">
+                                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                        <input type="text" class="form-control" value="10/04/2017">
+                                                    </div>
+                                                </div>
                                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                                                         <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Upload</button>
                                                               
@@ -1354,12 +1581,14 @@
                                                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                         <input type="text" class="form-control" />
                                                     </div> 
+                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" >    
+                                                        <div class="input-group date">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                                            <input type="text" class="form-control" value="10/04/2017">
+                                                        </div>
+                                                    </div>
                                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                                                        <input type="text" class="form-control" />
-                                                    </div> 
-                                                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                                                            <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Upload</button>
-                                                                  
+                                                            <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Upload</button>          
                                                     </div> 
                                                   
                                                 </div>
@@ -1529,6 +1758,15 @@
                                 </ul>
                               </div>
                           <div class="tab-pane fade" role="tabpanel" id="stepper-step-4">
+                                <ul class="list-inline pull-right">
+                                        <li>
+                                          <a class="btn btn-default prev-step" style="color:black;">Back</a>
+                                        </li>
+                                       
+                                        <li>
+                                          <a class="btn btn-primary next-step">Next</a>
+                                        </li>
+                                      </ul>
                                 <h3 class "h2">Medical Details</h3>
                                 <div class="form-group-inner">
                                     <div class="row">
@@ -1537,7 +1775,8 @@
                                         </div>
                                         
                                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="text" class="form-control"/>
+                                                        <!-- <input type="text" class="form-control"/> -->
+                                                        <textarea class="form-control" type="text"></textarea>
                                                     </div>
                                     </div>
                                 </div>
@@ -1548,8 +1787,8 @@
                                             </div>
                                             
                                                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                                                            <input type="text" class="form-control"/>
-                                                        </div>
+                                                        <textarea class="form-control" type="text"></textarea>
+                                                    </div>
                                         </div>
                                     </div>
                                     <div class="form-group-inner">
@@ -1816,6 +2055,7 @@
                             <h3>Summary</h3>
                             <hr>
                             <h3 class "h2">Personal Details</h3>
+
                             <div class="form-group-inner">
                                 <div class="row">
                                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12" style="width:110px;">

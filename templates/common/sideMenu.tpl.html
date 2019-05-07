@@ -2,51 +2,45 @@
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
         <div class="sidebar-header">
-            <a ng-href="#/"><img class="main-logo" src="../../assets/images/admin_img/logo/logo care full.png" alt="" /></a>
-            <strong><img src="../../assets/images/admin_img/logo/logosn.png" alt="" /></strong>
+            <a ng-href="/"><img class="main-logo" src="../../assets/images/admin_img/logo/logo care full.png" alt="" /></a>
+            <!-- <strong><img src="../../assets/images/admin_img/logo/logosn.png" alt="" /></strong> -->
         </div>
         <div class="left-custom-menu-adp-wrap comment-scrollbar" style="background-color:#383838;">
-            <nav class="sidebar-nav left-sidebar-menu-pro">
-                <ul class="metismenu" id="menu1" style="background-color:#383838;">
-                 
+            <nav class="sidebar-nav left-sidebar-menu-pro" ng-controller="mainController">
+                <ul class="metismenu"  style="background-color:#383838;"> 
                     <li class="panel-group active" id="accordian" style="margin-bottom: 0px;">
                         <div class="panel panel-default" style="margin-top: 0px;border:none;">
                             <div class="panel-heading cursor_pointers" href="#collapse_one" data-toggle="collapse" data-parent="#accordian" style="font-size:15px;background-color:#383838;color:white;"> <i class="fa big-icon fa-users icon-wrap"></i>Customer<span class="fa fa-angle-down pull-right" style="margin-top: 5px;"></span></div>
                             <div class="collapse panel-collapse in" id="collapse_one">
                                 <ul class="list-group" style="background-color:#4f4f4f;">
-                                    <li><a title="Registration" ng-href="/registration" style="color:white;"><i class="fa fa-user sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Registration</span></a></li>
-                                    <li><a title="Customer" ng-href="/customer" style="color:white;"><i class="fa fa-slideshare sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Customer</span></a></li>
+                                    <li ng-class="{ active: isActive('/registration/')}"><a title="Registration" ng-href="registration" style="color:white;"><i class="fa fa-user sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Registration</span></a></li>
+                                    <li ng-class="{ active: isActive('/customer/')}"><a title="Customer" ng-href="customer" style="color:white;"><i class="fa fa-slideshare sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Customer</span></a></li>
                                     <!-- <li><a title="Product Detail" ng-href="#productDetail/" style="color:white;"><i class="fa fa-heart-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Record</span></a></li> -->
-                                    <li><a title="Subscription" ng-href="#productCart/" style="color:white;"><i class="fa fa-youtube-play sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Subscription</span></a></li>
-                                    <li><a title="Payment" href="#productPayment/" style="color:white;"><i class="fa fa-credit-card sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Payment</span></a></li>
-                                    <li><a title="Feedback" ng-href="#analytics/" style="color:white;"><i class="fa fa-hand-o-right sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Feedback</span></a></li>
-                                    <li><a title="Caregiver" ng-href="#widgets/" style="color:white;"><i class="fa fa-ambulance sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Caregiver</span></a></li>
+                                    <li><a title="Subscription" ng-href="" style="color:white;"><i class="fa fa-youtube-play sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Subscription</span></a></li>
+                                    <li><a title="Payment" href="" style="color:white;"><i class="fa fa-credit-card sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Payment</span></a></li>
+                                    <li><a title="Feedback" ng-href="" style="color:white;"><i class="fa fa-hand-o-right sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Feedback</span></a></li>
+                                    <li><a title="Caregiver" ng-href="" style="color:white;"><i class="fa fa-ambulance sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Caregiver</span></a></li>
                                 </ul>
                             </div>
                         </div>
-                    </li>
-                    <li class="panel-group" id="accordian1"  style="margin-bottom: 0px;">
                         <div class="panel panel-default " style="border:none;">
-                            <div class="panel-heading cursor_pointers" href="#collapse_two" data-toggle="collapse" data-parent="#accordian1" style="font-size:15px;background-color:#383838;color:white;"><i class="fa big-icon fa-wheelchair icon-wrap"></i>Caregiver<span class="fa fa-angle-down pull-right" style="margin-top: 5px;"></span></div>
+                            <div class="panel-heading cursor_pointers" href="#collapse_two" data-toggle="collapse" data-parent="#accordian" style="font-size:15px;background-color:#383838;color:white;"><i class="fa big-icon fa-wheelchair icon-wrap"></i>User<span class="fa fa-angle-down pull-right" style="margin-top: 5px;"></span></div>
                             <div class="collapse panel-collapse" id="collapse_two">
                                 <ul class="list-group" style="background-color:#4f4f4f;">
-                                    <li><a title="Caregiver" href="#mailbox/" style="color:white;"><i class="fa fa-ambulance sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Caregiver</span></a></li>
-                                    <li><a title="Service log" href="#mailboxView/" style="color:white;"><i class="fa fa-plus-square sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Service log</span></a></li>
-                                    <!-- <li><a title="Compose Mail" href="#mailboxCompose/" style="color:white;"><i class="fa fa-paper-plane sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Compose Mail</span></a></li> -->
+                                    <li><a title="Caregiver" href="/careGiver" style="color:white;"><i class="fa fa-ambulance sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Community Manager</span></a></li>
+                                    <li><a title="Service log" href="" style="color:white;"><i class="fa fa-plus-square sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">CareGiver</span></a></li>
+                                    <li><a title="Compose Mail" href="" style="color:white;"><i class="fa fa-paper-plane sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Responder</span></a></li>
                                 </ul>
                             </div>
                         </div>
-                    </li>
-
-                    <li class="panel-group" id="accordian2"  style="margin-bottom: 0px;">
                         <div class="panel panel-default " style="border:none;">
-                            <div class="panel-heading cursor_pointers" href="#collapse_three" data-toggle="collapse" data-parent="#accordian2" style="font-size:15px;background-color:#383838;color:white;"><i class="fa big-icon fa-user-md icon-wrap"></i>Emergency Response<span class="fa fa-angle-down pull-right" style="margin-top: 5px;"></span></div>
+                            <div class="panel-heading cursor_pointers" href="#collapse_three" data-toggle="collapse" data-parent="#accordian" style="font-size:15px;background-color:#383838;color:white;"><i class="fa big-icon fa-user-md icon-wrap"></i>Emergency Response<span class="fa fa-angle-down pull-right" style="margin-top: 5px;"></span></div>
                             <div class="collapse panel-collapse" id="collapse_three">
                                 <ul class="list-group" style="background-color:#4f4f4f;">
-                                    <li><a title="Dashboard" href="#googleMap/" style="color:white;"><i class="fa fa-dashboard sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Dashboard</span></a></li>
-                                    <li><a title="Emergency Cases" href="#dataMaps/" style="color:white;"><i class="fa fa-ambulance sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Emergency Cases</span></a></li>
-                                    <li><a title="Task Management" href="#pdfViewer/" style="color:white;"><i class="fa fa-tasks sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Task Management</span></a></li>
-                                    <li><a title="Reports" href="#x-Editable/" style="color:white;"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Reports</span></a></li>
+                                    <li><a title="Dashboard" href="" style="color:white;"><i class="fa fa-dashboard sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Dashboard</span></a></li>
+                                    <li><a title="Emergency Cases" href="" style="color:white;"><i class="fa fa-ambulance sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Emergency Cases</span></a></li>
+                                    <li><a title="Task Management" href="" style="color:white;"><i class="fa fa-tasks sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Task Management</span></a></li>
+                                    <li><a title="Reports" href="" style="color:white;"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Reports</span></a></li>
                                     <!-- <li><a title="Code Editor" href="#codeEditor/"><i class="fa fa-code sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Code Editor</span></a></li> -->
                                     <!-- <li><a title="Tree View" href="#treeView/"><i class="fa fa-frown-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Tree View</span></a></li> -->
                                     <!-- <li><a title="Preloader" href="#preloader/"><i class="fa fa-circle sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Preloader</span></a></li> -->
@@ -54,98 +48,57 @@
                                 </ul>
                             </div>
                         </div>
-                    </li>
-                    <li class="panel-group" id="accordian3"  style="margin-bottom: 0px;">
                         <div class="panel panel-default " style="border:none;">
-                            <div class="panel-heading cursor_pointers" href="#collapse_Four" data-toggle="collapse" data-parent="#accordian3" style="font-size:15px;background-color:#383838;color:white;"><i class="fa big-icon fa-universal-access icon-wrap"></i>Service Management<span class="fa fa-angle-down pull-right" style="margin-top: 5px;"></span></div>
+                            <div class="panel-heading cursor_pointers" href="#collapse_Four" data-toggle="collapse" data-parent="#accordian" style="font-size:15px;background-color:#383838;color:white;"><i class="fa big-icon fa-user-plus icon-wrap"></i>Service Management<span class="fa fa-angle-down pull-right" style="margin-top: 5px;"></span></div>
                             <div class="collapse panel-collapse" id="collapse_Four">
                                 <ul class="list-group" style="background-color: #4f4f4f;">
-                                    <li><a title="Dashboard" ng-href="#fileManager/" style="color:white;"><i class="fa fa-dashboard sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Dashboard</span></a></li>
-                                    <li><a title="Service Request" ng-href="#blog/" style="color:white;"><i class="fa fa-universal-access sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Service Request</span></a></li>
-                                    <li><a title="Task Management" ng-href="#blogDetail/" style="color:white;"><i class="fa fa-tasks sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Task Management</span></a></li>
-                                    <li><a title="Report" ng-href="#error/" style="color:white;"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Report</span></a></li>
+                                    <li><a title="Dashboard" ng-href="" style="color:white;"><i class="fa fa-dashboard sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Dashboard</span></a></li>
+                                    <li><a title="Service Request" ng-href="" style="color:white;"><i class="fa fa-user-plus sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Service Request</span></a></li>
+                                    <li><a title="Task Management" ng-href="" style="color:white;"><i class="fa fa-tasks sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Task Management</span></a></li>
+                                    <li><a title="Report" ng-href="" style="color:white;"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Report</span></a></li>
                                     <!-- <li><a title="500 Page" ng-href="#500/"><i class="fa fa-tree sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">500 Page</span></a></li> -->
                                 </ul>
                             </div>
                         </div>
-                    </li>
-
-                    <li class="panel-group" id="accordian4"  style="margin-bottom: 0px;">
                         <div class="panel panel-default " style="border:none;">
-                            <div class="panel-heading cursor_pointers" href="#collapse_Five" data-toggle="collapse" data-parent="#accordian4" style="font-size:15px;background-color:#383838;color:white;"><i class="fa big-icon fa-bar-chart-o icon-wrap"></i>ITMS<span class="fa fa-angle-down pull-right" style="margin-top: 5px;"></span></div>
+                            <div class="panel-heading cursor_pointers" href="#collapse_Five" data-toggle="collapse" data-parent="#accordian" style="font-size:15px;background-color:#383838;color:white;"><i class="fa big-icon fa-bar-chart-o icon-wrap"></i>ITMS<span class="fa fa-angle-down pull-right" style="margin-top: 5px;"></span></div>
                             <div class="collapse panel-collapse" id="collapse_Five">
                                 <ul class="list-group" style="background-color: #4f4f4f;">
-                                    <li><a title="Configure" ng-href="#barCharts/" style="color:white;"><i class="fa fa-gear sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Configure</span></a></li>
-                                    <li><a title="Emergency Cases" ng-href="#lineCharts/" style="color:white;"><i class="fa fa-ambulance sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Emergency Cases</span></a></li>
-                                    <li><a title="Analytics" ng-href="#areaCharts/" style="color:white;"><i class="fa fa-align-justify sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Analytics</span></a></li>
-                                    <!-- <li><a title="Rounded Charts" ng-href="#roundedCharts/" style="color:white;"><i class="fa fa-signal sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Rounded Charts</span></a></li>
-                                    <li><a title="C3 Charts" ng-href="#c3/" style="color:white;"><i class="fa fa-barcode sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">C3 Charts</span></a></li>
-                                    <li><a title="Sparkline Charts" ng-href="#sparkLineCharts/" style="color:white;"><i class="fa fa-sort-amount-desc sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Sparkline Charts</span></a></li> -->
-                                    <!-- <li><a title="Peity Charts" ng-href="#peity/"><i class="fa fa-object-ungroup sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Peity Charts</span></a></li> -->
+                                    <li><a title="Configure" ng-href="" style="color:white;"><i class="fa fa-gear sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Configure</span></a></li>
+                                    <li><a title="Emergency Cases" ng-href="" style="color:white;"><i class="fa fa-ambulance sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Emergency Cases</span></a></li>
+                                    <li><a title="Analytics" ng-href="" style="color:white;"><i class="fa fa-align-justify sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Analytics</span></a></li>
                                 </ul>
                             </div>
                         </div>
-                    </li>
-                   
-                    <li class="panel-group" id="accordian5"  style="margin-bottom: 0px;">
                         <div class="panel panel-default " style="border:none;">
-                            <div class="panel-heading cursor_pointers" href="#collapse_Six" data-toggle="collapse" data-parent="#accordian5" style="font-size:15px;background-color:#383838;color:white;"><i class="fa big-icon fa-medkit icon-wrap"></i>Clinical Management<span class="fa fa-angle-down pull-right" style="margin-top: 5px;"></span></div>
+                            <div class="panel-heading cursor_pointers" href="#collapse_Six" data-toggle="collapse" data-parent="#accordian" style="font-size:15px;background-color:#383838;color:white;"><i class="fa big-icon fa-medkit icon-wrap"></i>Clinical Management<span class="fa fa-angle-down pull-right" style="margin-top: 5px;"></span></div>
                             <div class="collapse panel-collapse" id="collapse_Six">
                                 <ul class="list-group" style="background-color: #4f4f4f;">
-                                    <li><a title="Care Plan" href="#staticTable/" style="color:white;"><i class="fa fa-stethoscope sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Care Plan</span></a></li>
-                                    <li><a title="Care Tracking" href="#dataTable/" style="color:white;"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Care Tracking</span></a></li>
-                                    <li><a title="Reports" href="#dataTable/" style="color:white;"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Reports</span></a></li>
+                                    <li><a title="Care Plan" href="" style="color:white;"><i class="fa fa-stethoscope sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Care Plan</span></a></li>
+                                    <li><a title="Care Tracking" href="" style="color:white;"><i class="fa fa-line-chart sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Care Tracking</span></a></li>
+                                    <li><a title="Reports" href="" style="color:white;"><i class="fa fa-file-image-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Reports</span></a></li>
                            
                                 </ul>
                             </div>
                         </div>
-                    </li>
-                    
-                    <li class="panel-group" id="accordian6"  style="margin-bottom: 0px;">
                         <div class="panel panel-default " style="border:none;">
-                            <div class="panel-heading cursor_pointers" href="#collapse_Seven" data-toggle="collapse" data-parent="#accordian6" style="font-size:15px;background-color:#383838;color:white;"><i class="fa big-icon fa-cog icon-wrap"></i>Settings<span class="fa fa-angle-down pull-right" style="margin-top: 5px;"></span></div>
+                            <div class="panel-heading cursor_pointers" href="#collapse_Seven" data-toggle="collapse" data-parent="#accordian" style="font-size:15px;background-color:#383838;color:white;"><i class="fa big-icon fa-cog icon-wrap"></i>Settings<span class="fa fa-angle-down pull-right" style="margin-top: 5px;"></span></div>
                             <div class="collapse panel-collapse" id="collapse_Seven">
                                 <ul class="list-group" style="background-color: #4f4f4f;">
-                                    <li><a title="User" ng-href="#basicFormElement/" style="color:white;"><i class="fa fa-users sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">User</span></a></li>
-                                    <li><a title="Config Record" ng-href="#advanceFormElement/" style="color:white;"><i class="fa fa-spinner sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Config Record</span></a></li>
-                                    <li><a title="Service Plan" ng-href="#passwordMeter/" style="color:white;"><i class="fa fa-gear fa-spin sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Service Plan</span></a></li>
+                                    <li><a title="User" ng-href="" style="color:white;"><i class="fa fa-users sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">User</span></a></li>
+                                    <li><a title="Config Record" ng-href="" style="color:white;"><i class="fa fa-spinner sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Config Record</span></a></li>
+                                    <li><a title="Service Plan" ng-href="" style="color:white;"><i class="fa fa-gear fa-spin sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Service Plan</span></a></li>
                                     <!-- <li><a title="Multi Upload" href="#multiUpload"><i class="fa fa-hdd-o sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Multi Upload</span></a></li>
                                     <li><a title="Text Editor" href="#tinymc/"><i class="fa fa-globe sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Text Editor</span></a></li> -->
-                                    <li><a title="Control Panel" ng-href="#dualListBox/" style="color:white;"><i class="fa fa-cube sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Control Panel</span></a></li>
+                                    <li><a title="Control Panel" ng-href="" style="color:white;"><i class="fa fa-cube sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Control Panel</span></a></li>
                                 </ul>
                             </div>
                         </div>
                     </li>
-                   
-                    <!-- <li class="panel-group" id="accordian7"  style="margin-bottom: 0px;">
-                        <div class="panel panel-default " style="border:none;">
-                            <div class="panel-heading cursor_pointers" href="#collapse_Eight" data-toggle="collapse" data-parent="#accordian7" style="font-size:15px;background-color:#383838;color:white;"><i class="fa big-icon fa-desktop icon-wrap"></i>App views<span class="fa fa-angle-down pull-right" style="margin-top: 5px;"></span></div>
-                            <div class="collapse panel-collapse" id="collapse_Eight">
-                                <ul class="list-group" style="background-color: #4f4f4f;">
-                                    <li><a title="Notifications" ng-href="#notification/" style="color:white;"><i class="fa fa-external-link-square sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Notifications</span></a></li>
-                                    <li><a title="Alerts" ng-href="#alerts/" style="color:white;"><i class="fa fa-crop sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Alerts</span></a></li>
-                                    <li><a title="Modals" ng-href="#modals/" style="color:white;"><i class="fa fa-building sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Modals</span></a></li>
-                                    <li><a title="Buttons" ng-href="#buttons/" style="color:white;"><i class="fa fa-adjust sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Buttons</span></a></li>
-                                    <li><a title="Tabs" ng-href="#tabs/" style="color:white;"><i class="fa fa-eye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Tabs</span></a></li>
-                                    <li><a title="Accordion" ng-href="#accordian/" style="color:white;"><i class="fa fa-life-ring sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Accordion</span></a></li>
                                 </ul>
                             </div>
                         </div>
-                    </li>  -->
-                    <!-- <li class="panel-group" id="accordian8"  style="margin-bottom: 0px;">
-                        <div class="panel panel-default " style="border:none;">
-                            <div class="panel-heading cursor_pointers" href="#collapse_nine" data-toggle="collapse" data-parent="#accordian8" style="font-size:15px;background-color:#383838;color:white;"><i class="fa big-icon fa-files-o icon-wrap"></i>pages<span class="fa fa-angle-down pull-right" style="margin-top: 5px;"></span></div>
-                            <div class="collapse panel-collapse" id="collapse_nine">
-                                <ul class="list-group" style="background-color: #4f4f4f;">
-                                    <li><a title="Login" ng-href="#login/" style="color:white;"><i class="fa fa-hand-rock-o sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Login</span></a></li>
-                                    <li><a title="Register" ng-href="#register/" style="color:white;"><i class="fa fa-plane sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Register</span></a></li>
-                                    <li><a title="Lock" ng-href="#lock/" style="color:white;"><i class="fa fa-file sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Lock</span></a></li>
-                                    <!-- <li><a title="Password Recovery" ng-href="#passwordRecovery/"><i class="fa fa-wheelchair sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Password Recovery</span></a></li> -->
-                                </ul>
-                            </div>
-                        </div>
-                    </li>  -->
-                    <!-- <li><a title="Landing Page" href="#" aria-expanded="false"><i class="fa fa-bookmark icon-wrap sub-icon-mg" aria-hidden="true"></i> <span class="mini-click-non">Landing Page</span></a></li> -->
+                    </li> 
                 </ul>
             </nav>
         </div>

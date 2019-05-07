@@ -204,7 +204,8 @@ padding: 0
 }
 .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:hover, .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:focus, .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:active, .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li a:visited{
 	background:#ebebeb;
-	color:#444;
+    color:#444;
+    /* background-color:#ff470d; */
 }
 .left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li .indicator-right-menu{
 	float: right;
@@ -3104,6 +3105,7 @@ ul.mailbox-list li:hover a, ul.h-list li:hover a {
     display: inline-block;
     text-align: center;
     color:white;
+    border-radius:5px;
 }
 .modal-bootstrap.modal-login-form a{
     color:#fff;

@@ -1,10 +1,10 @@
 /**
- * Created by root on 29/6/16.
+ * Created by root on 22/4/19.
  */
 (function () {
-    var injectParams = ['$sails','$rootScope'];
-    var mainService = function ($sails,$rootScope) {
-    //   var serviceBase = '/api/employee/';
+    var injectParams = ['$http','$rootScope'];
+    var mainService = function ($http,$rootScope) {
+      // var serviceBase = "http://localhost:3000";
       var factory = {};
       
     /***************** *************************************
@@ -19,7 +19,7 @@
      *******************************************************/
 
     factory.testing = function () {
-        return $sails.get("/api/employee")
+        return $http.get("http://localhost:3000/api/employee")
           .success(function (results) {
             return results;
             })

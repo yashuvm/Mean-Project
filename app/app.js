@@ -11,10 +11,12 @@ app.config(['$routeProvider', '$locationProvider',
       .when("/", {
         controller: 'mainController',
         templateUrl:  viewBase + 'basetpl.html'
+        
       })
       .when("/registration/", {
         controller: 'registrationController',
         templateUrl: viewBase + 'registration.html'
+       
       })
       .when("/customer/", {
         controller: 'customerController',
@@ -28,9 +30,26 @@ app.config(['$routeProvider', '$locationProvider',
         controller: 'customerRecordController',
         templateUrl: viewBase + 'customerRecord.html'
       })
-      
-      
-      
+      .when("/careGiver/", {
+        controller: 'careGiverController',
+        templateUrl: viewBase + 'careGiver.html'
+      })
+      .when("/careGiver/careGiverDetail/", {
+        controller: 'careGiverDetailController',
+        templateUrl: viewBase + 'careGiverDetails.html'
+      })
+      .when("/careGiver/careGiverRecord/", {
+        controller: 'careGiverRecordController',
+        templateUrl: viewBase + 'careGiverRecord.html'
+      })
+      .when("/careGiver/addCareGiver/", {
+        controller: 'addCareGiverController',
+        templateUrl: viewBase + 'addCareGiver.html'
+      })
+      .when("/careGiver/addCareGiver/summaryAddCareGiver/", {
+        controller: 'summaryAddCareGiverController',
+        templateUrl: viewBase + 'summaryAddCareGiver.html'
+      })
       
       .otherwise({
         controller: 'errorController',
@@ -39,5 +58,18 @@ app.config(['$routeProvider', '$locationProvider',
 
       $locationProvider.html5Mode(true);
       
-    }]);
+    }])
+    .run(["$rootScope","$window", '$location', function ($rootScope, $window, $location,) {
+    
+ 
+  // $rootScope.isActive = function (viewLocation) {
+  //   if(viewLocation === $location.path()){
+  //     active = true;
+  // }
+  // return active;  
+  // };
+
+  
+}]);
+
    
