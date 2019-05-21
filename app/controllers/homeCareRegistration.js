@@ -41,10 +41,10 @@
   
   $scope.homecare = {
     user_name : "",
-    mobile_number : "",
-  }
+    mobile_number : ""
+  };
 
-  $scope.registration = function () {
+  $scope.register = function () {
    
    $scope.user_name = $scope.homecare.user_name;
    $scope.mobile_number = $scope.homecare.mobile_number;

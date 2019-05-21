@@ -62,13 +62,13 @@
                       <br><br>
                     </li> 
                   </ul>
-                  <form name="form">
+                  <form name="form" ng-submit="register();">
                     <div class="tab-content">
                       <div class="tab-pane fade in active" role="tabpanel" id="stepper-step-1">
                             <h3 class "h2">HomeCare Registration </h3>
                             <div class="sparkline12-graph">
                                     <div class="basic-login-form-ad">
-                                        <form ng-submit="register();">
+                                       
                                         <div class="row" >
                                                 
                                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -91,7 +91,7 @@
                                                                 </div>
                                                                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 inputdata">
                                                                         <!-- <input type="text" class="form-control" placeholder="Name"/> -->
-                                                                        <input type="text" class="form-control" ng-model="username.name" name="name" 
+                                                                        <input type="text" class="form-control" ng-model="homecare.user_name" name="name" 
                                                                         required ng-minlength=3 ng-maxlength=20 ng-pattern="/^[a-zA-Z]+$/">
                                                                 
                                                                     </div>
@@ -3819,7 +3819,7 @@
                           <a class="btn btn-default prev-step" style="color:black;">Back</a>
                         </li>
                         <li>
-                          <a class="btn btn-default cancel-stepper" style="color:black;"><button type="submit">Register</button></a>
+                          <a class="btn btn-default cancel-stepper" style="color:black;"><button type="submit" ng-click="register();">Register</button></a>
                         </li>
                         <li>
                                 <a class="btn btn-primary next-step">Continue</a>
