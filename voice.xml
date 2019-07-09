@@ -1,5 +1,3 @@
-<?xml version='1.0' ?>
-
 <Response>
 <Say voice="alice">Thanks for trying our documentation. Enjoy!</Say>
 <Play>https://nf1f8200-a.akamaihd.net/downloads/ringtones/files/mp3/ummon-hiyonat-45511-45514-45807.mp3</Play>
