@@ -1,4 +1,0 @@
-<Response>
-<Say voice="alice"Please check your phone a message comes from emoha</Say>
-<Play>http://demo.twilio.com/docs/classic.mp3</Play>
-</Response>
