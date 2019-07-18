@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<title>Ansyst Demonstration</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
+<body class="w3-blue">
+
+<div class="w3-center" style="height:100px;margin-top:10px;">
+<img src="./logo.png" style="width:200;height:auto;" class="w3-image w3-padding w3-left">
+<label style="text-decoration:none;margin-left:-12%;" class="w3-xxlarge">Rooms List</label>
+<a href="" class="w3-btn w3-white w3-round w3-right" style="margin:20px">Add Room</a>
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding w3-opacity" style="margin-top:5px;">
+  <div class=" w3-section">
+    <table style="width:100%"><tr>
+	<td style="width:50%">Room 103</td>
+	<td style="width:50%"><button class="w3-btn w3-white" onclick="window.location.assign('rooms.php?q=103')">Enter</button></td>
+    </tr></table>
+  </div>
+</footer>
+
+<footer class="w3-center w3-black w3-padding w3-opacity" style="margin-top:5px;">
+  <div class=" w3-section">
+    <table style="width:100%"><tr>
+	<td style="width:50%">Room 105</td>
+	<td style="width:50%"><button class="w3-btn w3-white" onclick="window.location.assign('rooms.php?q=105')">Enter</button></td>
+    </tr></table>
+  </div>
+</footer>
+
+<footer class="w3-center w3-black w3-padding w3-opacity w3-disabled" style="margin-top:5px;">
+  <div class=" w3-section">
+    <table style="width:100%"><tr>
+	<td style="width:50%">Room 108</td>
+	<td style="width:50%"><button class="w3-btn w3-white" onclick="window.location.assign('rooms.php?q=108')">Enter</button></td>
+    </tr></table>
+  </div>
+</footer>
+
+</body>
+</html>
