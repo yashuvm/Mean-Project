@@ -2,6 +2,7 @@
 $ck1="";
 $ck2="";
 if(isset($_GET["button"]))
+echo "aaa";
 {
 $button = $_GET["button"];
 if($button=="ON")

@@ -153,10 +153,14 @@
           if($scope.otherpreferd){
             $scope.rsp_language=$scope.otherpreferd
           }
+          $scope.selectstatus=$scope.respVal.status;
+          if($scope.selectstatus){
+            $scope.status=$scope.selectstatus;
+          }
           
       
          };
-         editResponderService.updateResponder($scope.rsp_name,$scope.rsp_id,$scope.res_mob,$scope.rsp_alt_mob_no,$scope.rsp_email,$scope.rsp_address,$scope.rsp_dob,$scope.rsp_education_1,$scope.rsp_education_2,$scope.rsp_education_3,$scope.comm_id, $scope.rsp_gender,$scope.rsp_language).success(function (result) {
+         editResponderService.updateResponder($scope.rsp_name,$scope.rsp_id,$scope.res_mob,$scope.rsp_alt_mob_no,$scope.rsp_email,$scope.rsp_address,$scope.rsp_dob,$scope.rsp_education_1,$scope.rsp_education_2,$scope.rsp_education_3,$scope.comm_id, $scope.rsp_gender,$scope.rsp_language,$scope.status).success(function (result) {
               
           if (result) {
               alert(result);

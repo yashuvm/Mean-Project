@@ -155,10 +155,9 @@
                                                                                                         </div>
                                                                                                         
                                                                                                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                                                                        <input type="text" name="locationName" class="form-control" ng-model="addRegion.region_location"  ng-minlength=3 ng-maxlength=100 ng-pattern="/^[a-zA-Z\s]*$/" required/>
+                                                                                                                        <input type="text" name="locationName" class="form-control" ng-model="addRegion.region_location"   required/>
                                                                                                                         <span ng-show="form1.locationName.$error.required && form1.locationName.$touched" class="help-block" style="font-size: 13px">Location is required.</span>
-                                                                                                                    <span ng-show="form1.locationName.$error.minlength" class="help-block" style="font-size: 13px">Your Location must be greater than 3 characters.</span>
-                                                                                                                    <span ng-show="form1.locationName.$error.maxlength" class="help-block" style="font-size: 13px">Your Location be less than 100 characters.</span>
+                                                                                                                  
                                                                                                                     </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -169,7 +168,7 @@
                                                                                                             </div>
                                                                                                             
                                                                                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                                                                            <textarea class="form-control" type="text" name="R_Address" ng-model="addRegion.region_address"  ng-minlength=5 ng-maxlength=100 ng-pattern="/^[a-zA-Z\s]*$/" required></textarea>
+                                                                                                                            <textarea class="form-control" type="text" name="R_Address" ng-model="addRegion.region_address"  ng-minlength=5 ng-maxlength=100  required></textarea>
                                                                                                                             <span ng-show="form1.R_Address.$error.required && form1.R_Address.$touched" class="help-block" style="font-size: 13px">Address is required.</span>
                                                                                                                     <span ng-show="form1.R_Address.$error.minlength" class="help-block" style="font-size: 13px">Your Address must be greater than 5 characters.</span>
                                                                                                                     <span ng-show="form1.R_Address.$error.maxlength" class="help-block" style="font-size: 13px">Your Address be less than 100 characters.</span>
@@ -184,7 +183,7 @@
                                                                                                                 </div>
                                                                                                                 
                                                                                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                                                                                <input type="text" name="phoneNo" class="form-control" ng-model="addRegion.region_phone " ng-minlength=10 maxlength=10 ng-pattern="/^-?(0|[1-9]\d*)?$/" required/>
+                                                                                                                                <input type="text" name="phoneNo" class="form-control" ng-model="addRegion.region_phone " ng-minlength=10 maxlength=10 ng-pattern="/^[0-9]\d*$/" required/>
                                                                                                                                 <span ng-show="form1.phoneNo.$error.required && form1.phoneNo.$touched" class="help-block" style="font-size: 13px">Mobile Number is required.</span>
                                                                                                                     <span ng-show="form1.phoneNo.$error.minlength" class="help-block" style="font-size: 13px">Mobile number must be of 10 digit</span>
                                                                                                                     
@@ -634,7 +633,7 @@
                                                                                                                     </div>
                                                                                                                     
                                                                                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                                                                                    <input type="text" name="number" class="form-control" ng-model="addCluster.cluster_phone" ng-minlength=10 maxlength=10 ng-pattern="/^-?(0|[1-9]\d*)?$/" required/>
+                                                                                                                                    <input type="text" name="number" class="form-control" ng-model="addCluster.cluster_phone" ng-minlength=10 maxlength=10 ng-pattern="/^[0-9]\d*$/" required/>
                                                                                                                                     <span ng-show="form2.number.$error.required && form2.number.$touched" class="help-block" style="font-size: 13px">Mobile Number is required.</span>
                                                                                                                                     <span ng-show="form2.number.$error.minlength" class="help-block" style="font-size: 13px">Mobile number must be of 10 digit</span>
                                                                                                                                     
@@ -687,8 +686,8 @@
                                                                                                     <div class="login-horizental">
                                                                                                         <!-- <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Add</button> -->
                                                                                                         <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="addCluster();"
-                                                                                                        ng-disabled="form2.CName.$error.required ||form2.CName.$error.minlength ||form2.CName.$error.maxlength||form2.location.$error.required||form2.location.$error.minlength||form2.location.$error.maxlength||
-                                                                                                        form2.address.$error.required ||form2.address.$error.minlength||form2.address.$error.maxlength||form2.number.$error.required||form2.number.$error.minlength||form2.number.$error.maxlength||form2.number.$error.pattern">Add</button>
+                                                                                                        ng-disabled="form2.CName.$error.required ||form2.CName.$error.minlength ||form2.CName.$error.maxlength||form2.location.$error.required||
+                                                                                                        form2.address.$error.required ||form2.number.$error.required||form2.number.$error.minlength||form2.number.$error.pattern">Add</button>
                                                                                                         <!-- <button class="btn btn-sm btn-default login-submit-cs" type="submit">Cancel</button> -->
                                                                                                         <a class="btn btn-default prev-step" style="color:black;" ng-click="clearCluster();">Clear</a>
                                                                                                     </div>
@@ -1080,10 +1079,9 @@
                                                                                                             </div>
                                                                                                             
                                                                                                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                                                                            <input type="text" name="location" class="form-control" ng-model="addCommunity.comm_location" ng-minlength=3 ng-maxlength=100 ng-pattern="/^[a-zA-Z]+$/" required/>
+                                                                                                                            <input type="text" name="location" class="form-control" ng-model="addCommunity.comm_location"  required/>
                                                                                                                             <span ng-show="form.location.$error.required && form.location.$touched" class="help-block" style="font-size: 13px">Location is required.</span>
-                                                                                                                            <span ng-show="form.location.$error.minlength" class="help-block" style="font-size: 13px">Your Location must be greater than 3 characters.</span>
-                                                                                                                            <span ng-show="form.location.$error.maxlength" class="help-block" style="font-size: 13px">Your Location be less than 100 characters.</span>
+                                                                                                                            
                                                                                                                             
                                                                                                                             
                                                                                                                         </div>
@@ -1096,10 +1094,9 @@
                                                                                                                 </div>
                                                                                                                 
                                                                                                                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                                                                                <textarea class="form-control" name="address" type="text" ng-model="addCommunity.comm_address" ng-minlength=3 ng-maxlength=100 ng-pattern="/^[a-zA-Z]+$/" required></textarea>
+                                                                                                                                <textarea class="form-control" name="address" type="text" ng-model="addCommunity.comm_address"  required></textarea>
                                                                                                                                 <span ng-show="form.address.$error.required && form.address.$touched" class="help-block" style="font-size: 13px">Address is required.</span>
-                                                                                                                                <span ng-show="form.address.$error.minlength" class="help-block" style="font-size: 13px">Your Address must be greater than 3 characters.</span>
-                                                                                                                                <span ng-show="form.address.$error.maxlength" class="help-block" style="font-size: 13px">Your Address be less than 100 characters.</span>
+                                                                                                                                
                                                                                                                                 
                                                                                                                             </div>
                                                                                                             </div>
@@ -1111,7 +1108,7 @@
                                                                                                                     </div>
                                                                                                                     
                                                                                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                                                                                                    <input type="text" name="mobileNo" class="form-control" ng-model="addCommunity.comm_phone" ng-minlength=10 maxlength=10 ng-pattern="/^-?(0|[1-9]\d*)?$/" required/>
+                                                                                                                                    <input type="text" name="mobileNo" class="form-control" ng-model="addCommunity.comm_phone" ng-minlength=10 maxlength=10 ng-pattern="/^[0-9]\d*$/" required/>
                                                                                                                                     <span ng-show="form.mobileNo.$error.required && form.mobileNo.$touched" class="help-block" style="font-size: 13px">Mobile Number is required.</span>
                                                                                                                                     <span ng-show="form.mobileNo.$error.minlength" class="help-block" style="font-size: 13px">Mobile number must be of 10 digit</span>
                                                                                                                                     
@@ -1162,9 +1159,9 @@
                                                                                                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                                                                                                     <div class="login-horizental">
                                                                                                         <!-- <button class="btn btn-sm btn-primary login-submit-cs" type="submit">Add</button> -->
-                                                                                                        <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="addCommunity();" ng-disabled= "form.name.$error.required||form.name.$error.minlength||form.name.$error.maxlength||
-                                                                                                        form.location.$error.required||form.location.$error.minlength||form.location.$error.maxlength||form.address.$error.required||form.address.$error.minlength||form.address.$error.maxlength||
-                                                                                                        form.mobileNo.$error.required||form.mobileNo.$error.minlength||form.mobileNo.$error.maxlength||form.mobileNo.$error.pattern">Add </button>
+                                                                                                        <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="addCommunity();" ng-disabled= "form.name.$error.required||
+                                                                                                        form.location.$error.required||form.address.$error.required||
+                                                                                                        form.mobileNo.$error.required||form.mobileNo.$error.minlength||form.mobileNo.$error.pattern">Add </button>
                                                                                                         <!-- <button class="btn btn-sm btn-default login-submit-cs" type="submit">Cancel</button> -->
                                                                                                         <a class="btn btn-default prev-step" style="color:black;" ng-click="clearCommunity();">Clear</a>
                                                                                                     </div>

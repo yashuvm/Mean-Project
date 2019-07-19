@@ -171,6 +171,8 @@
                                                     </th> -->
                                                     <th class="th-sm" ><center>Details</center>
                                                     </th>
+                                                    <th class="th-sm" ><center>Status</center>
+                                                    </th>
                                                     <!-- <th class="th-sm" style="color:lightgrey;"><center>Settings</center>
                                                     </th> -->
                                                    
@@ -199,6 +201,7 @@
                                                         <td><center>{{responder.res_mob |limitTo: -10}}</center></td>
                                                         <td><center>{{responder.comm_name}}</center></td>
                                                         <td><center>{{responder.COUNT}}</center></td>
+                                                        <td><center>{{responder.status}}</center></td>
                                                        
                                                         <td><a ng-href="/responder/responderDetail/{{responder.rsp_id}}"><center><button type="button" value="{{responder.rsp_id}}" ng-click="responderId(responder.rsp_id)">Details</button></center></a></td>
                                                         <!-- <td><a href="/customer/customerRecord" class="btn-disabled" disabled="disabled"><center><button type="button">Setting</button></center></a></td> -->
@@ -223,6 +226,8 @@
                                                     <!-- <th><center>Emergency Contact(Mobile No.)</center>
                                                     </th> -->
                                                     <th><center>Details</center>
+                                                    </th>
+                                                    <th><center>Status</center>
                                                     </th>
                                                     <!-- <th style="color:lightgrey;"><center>Settings</center>
                                                     </th> -->

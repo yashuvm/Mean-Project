@@ -289,8 +289,9 @@ $scope.viewResponder = function (emg_id){
       }
     });
   };
-  $scope.viewdata = function (emg_id) {
+  $scope.viewdata = function (emg_id,responder_acpt_status) {
     $rootScope.viewId = emg_id;
+    $rootScope.responderFeedbackValue = responder_acpt_status;
     monitoringService.viewdata(emg_id).success(function (result) {  
       if (result) { 
         $rootScope.viewdataDetails = result;

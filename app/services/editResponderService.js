@@ -7,7 +7,7 @@
     
       var factory = {};
     
-    factory.updateResponder = function (rsp_name,rsp_id,res_mob,rsp_alt_mob_no,rsp_email,rsp_address,rsp_dob,rsp_education_1,rsp_education_2,rsp_education_3,comm_id,rsp_gender,rsp_language ) {
+    factory.updateResponder = function (rsp_name,rsp_id,res_mob,rsp_alt_mob_no,rsp_email,rsp_address,rsp_dob,rsp_education_1,rsp_education_2,rsp_education_3,comm_id,rsp_gender,rsp_language,status) {
         var serviceInput = {};
         serviceInput.rsp_name =rsp_name;
         // serviceInput.rm_id=rm_id;
@@ -23,7 +23,7 @@
         serviceInput.comm_id=comm_id;
         serviceInput.rsp_gender=rsp_gender;
         serviceInput.rsp_language=rsp_language;
-  
+        serviceInput.status=status;
   
         
         // return $http.get("http://13.233.7.113:5000/api/get/flag_motioring/" + emg ,serviceInput)
