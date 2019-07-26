@@ -1,0 +1,392 @@
+<!----Zone----->
+<div class="all-content-wrapper">
+    
+    <div class="data-table-area mg-tb-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="sparkline13-list">
+                        <div class="sparkline13-hd">
+                            <div class="main-sparkline13-hd">
+                                <!----Breadcrumb----->
+                                <h5><span class="table-project-n">Manager >></span></h5>
+                                <!----Breadcrumb----->
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="admintab-wrap mg-t-30">
+                                        <!----Tabs----->
+                                        <ul class="nav nav-tabs custom-menu-wrap custon-tab-menu-style1">
+                                            <li class="active"><a data-toggle="tab" data-target="#Region"><span class="adminpro-icon adminpro-analytics tab-custon-ic"></span>Region</a>
+                                            </li>
+                                            <li><a data-toggle="tab" data-target="#Cluster"><span class="adminpro-icon adminpro-analytics-arrow tab-custon-ic"></span>Cluster</a>
+                                            </li>
+                                            <li><a data-toggle="tab" data-target="#Community"><span class="adminpro-icon adminpro-analytics-bridge tab-custon-ic"></span>Community</a>
+                                            </li>
+                                            <!-- <li><a data-toggle="tab" data-target="#Coordinator"><span class="adminpro-icon adminpro-analytics-bridge tab-custon-ic"></span>Care Co-ordinator</a>
+                                            </li> -->
+                                        </ul>
+                                        <!----Tabs----->
+
+                                        <!---Tabs Content-->
+                                        <div class="tab-content">
+                                            <!--All Table Data-->
+                                            <div id="Region" class="tab-pane in active custon-tab-style1">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="sparkline13-list">
+                                                            <div class="sparkline13-hd">
+                                                                <div class="main-sparkline13-hd">
+                                                                    <div class="row">
+                                                                            
+                                                                                <div class="col-xs-12 col-sm-2 col-lg-1 col-md-3">
+                                                                                        <ul class="list-inline">
+                                                                                                
+                                                                                                
+                                                                                                <li>
+                                                                                                        <a href="/manager/add_Region_manager" class="btn btn-primary next-step" style="background-color:#ff470d;border-color:#ff470d; "><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Region Manager</a>
+                                                                                                    </li>
+                                                                                               
+                                                                                                
+                                                                                              </ul>  
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pull-right search">
+                                                                                        <input class="form-control" type="text" placeholder="Search By Name/Mobile No/Region" ng-model="queryRegionmanager">
+                                                                                    </div>
+                                                                    </div>
+                                                                      
+                                                                                             
+                                                                </div>
+                                                            </div>
+                                                            <div class="sparkline13-graph">
+                                                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                                                    
+                                                                    <br>
+                                                                   <div class="container-fluid" style="overflow-x:auto;"> 
+                                                                        <table id="customerTable" ng-init="regionManager();" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                                                                                <thead>
+                                                                                  <tr>
+                                                                                      <th class="th-sm"><center>Region</center>
+                                                                                      </th>
+                                                                                      <th class="th-sm" ><center>Region Manager Name</center>
+                                                                                      </th>
+                                                                                    <th class="th-sm"><center>Emp Code(RM)</center>
+                                                                                    </th>
+
+                                                                                    <th class="th-sm" ><center>Mobile No.</center>
+                                                                                    </th>
+
+                                                                                    <!--<th class="th-sm"><center>Status</center>-->
+                                                                                    <!--</th>-->
+                                                                                    <th class="th-sm" ><center>Details</center>
+                                                                                    </th>
+                                                                                    <!-- <th class="th-sm" style="color:lightgrey;" ><center>Settings</center>
+                                                                                    </th> -->
+                                                                                  </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                 
+                                                                                  <!-- <tr>
+                                                                                    <td><center>Gurgaon</center></td>
+                                                                                    <td><center>Sector 51</center></td>
+                                                                                    <td><center>314, Ocus Quantam</center></td>
+                                                                                    <td><center>Tiger Nixon</center></td>
+                                                                                    <td><center>789456123</center></td> 
+                                                                                    <td>
+                                                                                            <center>
+                                                                                                    <div class="modal-bootstrap modal-login-form" style="padding:0px;border:none;">      
+                                                                                                            <button type="button"><a style="color:black;" href="/zone#Region" data-toggle="modal" data-target="#EditRegion">Edit</a></button>  
+                                                                                                    </div>
+                                                                                            </center>
+                                                                                    </td>           
+                                                                                  </tr> -->
+                                                                                  <tr ng-repeat="regionManager in regionManagerDetails | filter:Search">
+                                                                                      <td><center>{{regionManager.region_name}}</center></td>
+                                                                                      <td><center>{{regionManager.rm_name}}</center></td>
+                                                                                      <td><center>{{regionManager.emp_code}}</center></td>
+
+                                                                                      <td><center>{{regionManager.rm_mob |limitTo: -10 }}</center></td>
+                                                                                        <!--<td>{{regionManager.region_status}}</td>-->
+                                                                                        <!-- <td>{{clusterManager.pri_emg_name}}</td> -->
+                                                                                        <!-- <td>{{clusterManager.pri_emg_mob}}</td> -->
+                                                                                        <!-- <td>{{customer.cust_code}}</td> -->
+                                                                                        <td><a ng-href="/manager/regionManagerDetail/{{regionManager.rm_id}}"><center><button type="button" value="{{regionManager.rm_id}}" ng-click="regionId(regionManager.rm_id)">Details</button></center></a></td>
+                                                                                        <!-- <td><a href="/customer/customerRecord" class="btn-disabled" disabled="disabled"><center><button type="button">Record</button></center></a></td> -->
+                                                                                        <!-- <td><a href=""><center><button type="button">Service Log</button></center></a></td> -->
+                                                                                   
+                                                                                    </tr>
+                                                                                 
+                                                                                </tbody>
+                                                                                <tfoot>
+                                                                                <tr>
+                                                                                    <th><center>Region</center>
+                                                                                    </th>
+                                                                                    <th><center>Region Manager Name</center>
+                                                                                    </th>
+                                                                                    <th><center>Emp Code(RM)</center>
+                                                                                    </th>
+
+                                                                                    <th><center>Mobile No.</center>
+                                                                                    </th>
+
+                                                                                    <!--<th class="th-sm"><center>Status</center>-->
+                                                                                    <!--</th>-->
+                                                                                    <th><center>Details</center>
+                                                                                    </th>
+                                                                                    <!-- <th class="th-sm" style="color:lightgrey;" ><center>Settings</center>
+                                                                                    </th> -->
+                                                                                </tr>
+                                                                                </tfoot>
+                                                                              </table>
+                                                                             
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!--All Table Data-->
+
+                                            <!--All Region Data-->
+
+                                            <div id="Cluster" class="tab-pane custon-tab-style1">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="sparkline13-list">
+                                                            <div class="sparkline13-hd">
+                                                                <div class="main-sparkline13-hd">
+                                                                       <div class="row">
+                                                                            
+                                                                            <div class="col-lg-1 col-md-3 col-sm-2 col-xs-12">
+                                                                                    <ul class="list-inline">
+                                                                                            
+                                                                                            
+                                                                                            <li>
+                                                                                                    <a href="/manager/add_Cluster_Manager" class="btn btn-primary next-step" style="background-color:#ff470d;border-color:#ff470d;"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Cluster Manager</a>
+                                                                                                </li>
+                                                                                           
+                                                                                            
+                                                                                          </ul>  
+                                                                            </div>
+                                                                            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pull-right search">
+                                                                                    <input class="form-control" type="text" placeholder="Search By Name/Mobile No/Cluster" ng-model="query">
+                                                                            </div>
+                                                                       </div>
+                                                                                             
+                                                                </div>
+                                                            </div>
+                                                            <div class="sparkline13-graph">
+                                                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                                                    
+                                                                    <br>
+                                                                   <div class="container-fluid" style="overflow-x:auto;"> 
+                                                                        <table id="customerTable" ng-init="clusterManager();" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                                                                                <thead>
+                                                                                  <tr>
+                                                                                      <th class="th-sm"><center>Cluster</center>
+                                                                                      </th>
+                                                                                      <th class="th-sm" ><center>Cluster Manager Name</center>
+                                                                                      </th>
+                                                                                    <th class="th-sm"><center>Emp Code(CM)</center>
+                                                                                    </th>
+
+                                                                                    <th class="th-sm" ><center>Mobile No.</center>
+                                                                                    </th>
+
+                                                                                    <!--<th class="th-sm"><center>Status</center>-->
+                                                                                    <!--</th>-->
+                                                                                    <th class="th-sm" ><center>Details</center>
+                                                                                    </th>
+                                                                                    <!-- <th class="th-sm" style="color:lightgrey;"><center>Settings</center>
+                                                                                    </th> -->
+                                                                                  </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr ng-repeat="clusterManager in clusterManagerDetails | filter:Search1">
+                                                                                        <td><center>{{clusterManager.cluster_name}}</center></td>
+                                                                                        <td><center>{{clusterManager.clm_name}}</center></td>
+                                                                                        <td><center>{{clusterManager.emp_code}}</center></td>
+
+                                                                                        <td><center>{{clusterManager.clm_mob |limitTo: -10}}</center></td>
+
+                                                                                    <!--<td>{{clusterManager.cluster_status}}</td>-->
+                                                                                    <!-- <td>{{clusterManager.pri_emg_name}}</td> -->
+                                                                                    <!-- <td>{{clusterManager.pri_emg_mob}}</td> -->
+                                                                                    <!-- <td>{{customer.cust_code}}</td> -->
+                                                                                    <td><a ng-href="/manager/clusterManagerDetail/{{clusterManager.clm_id}}"><center><button type="button" value="{{clusterManager.clm_id}}" ng-click="clusterId(clusterManager.clm_id)">Details</button></center></a></td>
+                                                                                    <!-- <td><a href="/customer/customerRecord" class="btn-disabled" disabled="disabled"><center><button type="button">Record</button></center></a></td> -->
+                                                                                    <!-- <td><a href=""><center><button type="button">Service Log</button></center></a></td> -->
+                                                                               
+                                                                                </tr>
+                                                                                  
+                                                                                </tbody>
+                                                                                <tfoot>
+                                                                                <tr>
+                                                                                    <th><center>Cluster</center>
+                                                                                    </th>
+                                                                                    <th><center>Cluster Manager Name</center>
+                                                                                    </th>
+                                                                                    <th><center>Emp Code(CL)</center>
+                                                                                    </th>
+
+                                                                                    <th><center>Mobile No.</center>
+                                                                                    </th>
+
+                                                                                    <!--<th class="th-sm"><center>Status</center>-->
+                                                                                    <!--</th>-->
+                                                                                    <th><center>Details</center>
+                                                                                    </th>
+                                                                                    <!-- <th class="th-sm" style="color:lightgrey;"><center>Settings</center>
+                                                                                    </th> -->
+                                                                                </tr>
+                                                                                </tfoot>
+                                                                              </table>
+                                                                             
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--All Region Data-->
+
+                                            <!--All Cluster Data-->
+
+                                            <div id="Community" class="tab-pane custon-tab-style1">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <div class="sparkline13-list">
+                                                            <div class="sparkline13-hd">
+                                                                <div class="main-sparkline13-hd">
+                                                                     <div class="row">
+                                                                            
+                                                                                <div class="col-lg-1 col-md-3 col-sm-2 col-xs-12">
+                                                                                        <ul class="list-inline">
+                                                                                                
+                                                                                                <li>
+                                                                                                    <a href="/manager/add_Community_Manager" class="btn btn-primary next-step" style="background-color:#ff470d;border-color:#ff470d;"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Community Manager</a>
+                                                                                                    </li>
+                                                                                               
+                                                                                                
+                                                                                              </ul>
+                                                                                </div>
+                                                                                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 pull-right search">
+                                                                                        <input class="form-control" type="text" placeholder="Search By Name/Mobile No/Community" ng-model="query2">
+                                                                                    </div>
+                                                                     </div>
+                                                                                             
+                                                                </div>
+                                                            </div>
+                                                            <div class="sparkline13-graph">
+                                                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                                                    <div class="row">
+                                                                          
+                                                                    </div>
+                                                                    <br>
+                                                                   <div class="container-fluid" style="overflow-x:auto;"> 
+                                                                        <table id="customerTable" ng-init="communityManager();" class="table table-bordered table-sm" cellspacing="0" width="100%">
+                                                                                <thead>
+                                                                                  <tr>
+                                                                                      <th class="th-sm"><center>Community</center>
+                                                                                      </th>
+                                                                                      <th class="th-sm" ><center>Community Manager Name</center>
+                                                                                      </th>
+                                                                                    <th class="th-sm"><center>Emp Code(COM)</center>
+                                                                                    </th>
+
+                                                                                    <th class="th-sm" ><center>Mobile No.</center>
+                                                                                    </th>
+
+                                                                                    <!--<th class="th-sm"><center>Status</center>-->
+                                                                                    <!--</th>-->
+                                                                                    <th class="th-sm" ><center>Details</center>
+                                                                                    </th>
+                                                                                    <!-- <th class="th-sm" style="color:lightgrey;"><center>Settings</center>
+                                                                                    </th> -->
+                                                                                  </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr ng-repeat="communityManager in communityManagerDetails | filter:Search3">
+                                                                                        <td><center>{{communityManager.comm_name}}</center></td>
+                                                                                        <td><center>{{communityManager.cm_name}}</center></td>
+                                                                                        <td><center>{{communityManager.emp_code}}</center></td>
+
+                                                                                        <td><center>{{communityManager.cm_mob |limitTo: -10}}</center></td>
+
+                                                                                        <!--<td>{{communityManager.comm_status}}</td>-->
+                                                                                        <!-- <td>{{clusterManager.pri_emg_name}}</td> -->
+                                                                                        <!-- <td>{{clusterManager.pri_emg_mob}}</td> -->
+                                                                                        <!-- <td>{{customer.cust_code}}</td> -->
+                                                                                        <td><a ng-href="/manager/communityManagerDetail/{{communityManager.cm_id}}"><center><button type="button" value="{{communityManager.cm_id}}" ng-click="communityId(communityManager.cm_id)">Details</button></center></a></td>
+                                                                                        <!-- <td><a href="/customer/customerRecord" class="btn-disabled" disabled="disabled"><center><button type="button">Record</button></center></a></td> -->
+                                                                                        <!-- <td><a href=""><center><button type="button">Service Log</button></center></a></td> -->
+                                                                                   
+                                                                                    </tr>
+                                                                                  
+                                                                                </tbody>
+                                                                                <tfoot>
+                                                                                    <tr>
+                                                                                        <th><center>Community</center>
+                                                                                        </th>
+                                                                                        <th><center>Community Manager Name</center>
+                                                                                        </th>
+                                                                                        <th><center>Emp Code(COM)</center>
+                                                                                        </th>
+
+                                                                                        <th><center>Mobile No.</center>
+                                                                                        </th>
+
+                                                                                        <!--<th class="th-sm"><center>Status</center>-->
+                                                                                        <!--</th>-->
+                                                                                        <th><center>Details</center>
+                                                                                        </th>
+                                                                                        <!-- <th style="color:lightgrey;"><center>Settings</center>
+                                                                                        </th> -->
+                                                                                      </tr>
+                                                                                </tfoot>
+                                                                              </table>
+                                                                              <!-- <div class="row">
+                                                                                <h4>Total count : 50
+                                                                                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pull-right">
+                                                                                                <ul class="pagination justify-content-end pull-right" style="font-size:13px;">
+                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);"> << </a></li>
+                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                                                                                        <li class="page-item"><a class="page-link" href="javascript:void(0);"> >> </a></li>
+                                                                                                      </ul>
+                                                                                        </div>
+                                                                                </h4>
+                                                                              </div> -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--All Cluster Data-->
+
+                                            <!--All Community Data-->
+
+                                            
+                                            <!--All Community Data-->
+                                        </div>
+                                        <!---Tabs Content-->
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!----Zone----->
