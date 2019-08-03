@@ -8,10 +8,10 @@
 
     $scope.emrgType = 
     [
-     {
+    //  {
       
-       "name":"Select Emergency Type",
-      },
+    //    "name":"Select Emergency Type",
+    //   },
       {
       "selected":false,
       "name":"Health",
