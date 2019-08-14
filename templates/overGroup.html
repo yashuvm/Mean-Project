@@ -1,0 +1,1204 @@
+<!--Date: 08/08/2019-->
+<!--Artcle-->
+<div class="page-content" ng-controller="baseController" ng-init="getmoduledata();">
+    <!-- sidebar-content -->
+    <div class="sidebar sidebar-dark sidebar-main sidebar-expand-md" id="sidebar" >
+        <!-- Sidebar mobile toggler -->
+        <!--<div class="sidebar-mobile-toggler text-center">-->
+        <!--<a href="#" class="sidebar-mobile-main-toggle">-->
+        <!--<i class="icon-arrow-left8"></i>-->
+        <!--</a>-->
+        <!--Navigation-->
+        <!--<a href="#" class="sidebar-mobile-expand">-->
+        <!--<i class="icon-screen-full"></i>-->
+        <!--<i class="icon-screen-normal"></i>-->
+        <!--</a>-->
+        <!--</div>-->
+        <!-- /sidebar mobile toggler -->
+
+
+        <!-- Sidebar content -->
+        <div class="sidebar-content" >
+
+            <!-- User menu -->
+            <div class="sidebar-user">
+                <div class="card-body">
+                    <div class="media">
+                        <div class="mr-3">
+                            <a href="#"><img src="../assets/CSS/global_assets/images/placeholders/placeholder.jpg" width="38" height="38" class="rounded-circle" alt=""></a>
+                        </div>
+
+                        <div class="media-body" style="padding-top: 10px" >
+                            <div class="media-title font-weight-semibold"  ng-hide="subsystem_iddata" ng-if="(subsystemdatavalue == '1')">Material Control</div>
+                            <div class="media-title font-weight-semibold" ng-if="(subsystem_iddata == '2')">Procurement</div>
+                            <div class="media-title font-weight-semibold" ng-if="(subsystem_iddata == '3')">Marketing</div>
+                            <div class="media-title font-weight-semibold" ng-if="(subsystem_iddata == '4')">Utility</div>
+                            <div class="media-title font-weight-semibold" ng-if="(subsystem_iddata == '5')">House Keeping</div>
+                            <div class="media-title font-weight-semibold" ng-if="(subsystem_iddata == '6')">Financial</div>
+                            <div class="media-title font-weight-semibold" ng-if="(subsystem_iddata == '7')">Man Power</div>
+                            <div class="media-title font-weight-semibold" ng-if="(subsystem_iddata == '8')">Set up</div>
+                            <div class="media-title font-weight-semibold" ng-if="(subsystem_iddata == '1')">Material Control</div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-sortable" id="accordion-controls">
+                <div class="card"  ng-if="!subsystem_iddata" ng-init="submoduledefaultdata(loginIdData.email)">
+                    <div ng-if="(!subsystem_id) &&(submoduledefaultId == defaultmodule.sub_system_id)" style="color:white;" >
+                        <!--<h6 class="card-title">-->
+                        <a data-toggle="collapse" class="card-header header-elements-inline text-default" onclick="mainbackcolordata()" id="1" data-target="#accordion-controls-group1" style="color:white;" ng-init="getModuleId(defaultmodule.module_id);mainbackcolor1();" ng-click="getModuleId(defaultmodule.module_id);"><span><i class="icon-file-plus">&nbsp;</i>{{defaultmodule.module_name}}</span></a>
+                        <!--</h6>-->
+                        <!--<a data-toggle="collapse" class="text-default"  href="#accordion-controls-group1" style="color:white;"><i class="icon-copy"></i> <span>{{systemmoduledata.module_name}}</span><button type="button" ng-click="getModuleId(systemmoduledata.module_id)">{{systemmoduledata.module_id}}</button></a>-->
+                        <div id="accordion-controls-group1" class="collapse show" data-parent="#accordion-controls" >
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Article Creation')">
+
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule1"><a ng-href="/Admin/article/" style="color:white;padding:0.35rem;" class="nav-link">{{materialcontrolsunmodule1.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Article Creation')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule2"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link" >{{materialcontrolsunmodule2.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Article Creation')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule3"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule3.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Article Creation')">
+                                    <li class="nav-item" ng-if="(materialcontrolsunmodule4.sub_mod_id == '104')"><a ng-href="/Admin/majorGroup/" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule4.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;background-color:rgba(0,0,0,0.15);" ng-if="(defaultmodule.module_name == 'Article Creation')">
+                                    <li class="nav-item" ng-if="(materialcontrolsunmodule5.sub_mod_id == '105')"><a ng-href="/Admin/overGroup/"  style="color:white;padding:0.35rem;" class="nav-link" >{{materialcontrolsunmodule5.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Article Creation')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule6"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule6.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Article Creation')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule7"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule7.sub_mod_name}}</a></li>
+                                </ul>
+                                <!--</ul>-->
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Purchase')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule1"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule1.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule2"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link" >{{materialcontrolsunmodule2.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule3"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule3.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Vendor Management')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule1"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule1.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule2"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link" >{{materialcontrolsunmodule2.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule3"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule3.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Data Acquision')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule1"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule1.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule2"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link" >{{materialcontrolsunmodule2.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule3"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule3.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Booking')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule1"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule1.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule2"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link" >{{materialcontrolsunmodule2.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule3"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule3.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Evaluation Tool')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule1"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule1.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule2"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link" >{{materialcontrolsunmodule2.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule3"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule3.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Proximity Marketing')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule1"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule1.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule2"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link" >{{materialcontrolsunmodule2.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule3"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule3.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'In-House Service')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule1"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule1.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule2"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link" >{{materialcontrolsunmodule2.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule3"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule3.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Store')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule1"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule1.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule2"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link" >{{materialcontrolsunmodule2.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule3"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule3.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Production')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule1"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule1.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule2"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link" >{{materialcontrolsunmodule2.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule3"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule3.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Bar Inventory')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule1"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule1.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule2"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link" >{{materialcontrolsunmodule2.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule3"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule3.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'Voucher')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule1"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule1.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule2"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link" >{{materialcontrolsunmodule2.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule3"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule3.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'IPS')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule1"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule1.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule2"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link" >{{materialcontrolsunmodule2.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule3"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule3.sub_mod_name}}</a></li>
+                                </ul>
+                                <ul style="list-style: none;margin:0px;" ng-if="(defaultmodule.module_name == 'System Configuration')">
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule1"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule1.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule2"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link" >{{materialcontrolsunmodule2.sub_mod_name}}</a></li>
+                                    <li class="nav-item" ng-if="materialcontrolsunmodule3"><a ng-href="" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{materialcontrolsunmodule3.sub_mod_name}}</a></li>
+                                </ul>
+                                <!--Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.-->
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="card"  ng-if="!subsystem_iddata" >
+                    <div  ng-if="(!subsystem_id) &&((submoduledefaultId == alldefaultmodule1.sub_system_id) || (submoduledefaultId == alldefaultmodule2.sub_system_id) || (submoduledefaultId == alldefaultmodule3.sub_system_id) || (submoduledefaultId == alldefaultmodule4.sub_system_id) || (submoduledefaultId == alldefaultmodule5.sub_system_id))" style="color:white;">
+                        <!--<h6 class="card-title">-->
+                        <a ng-if="(alldefaultmodule1.module_name == 'Store')"class="card-header header-elements-inline collapsed text-default" onclick="backcolor()" id="alldefaultmodule1.module_id" data-toggle="collapse" style="color:white;" ng-click="getModuleId(alldefaultmodule1.module_id)" data-target="#accordion-controls-group{{alldefaultmodule1.module_id}}"><span><i class="icon-store icon-1x">&nbsp;</i>{{alldefaultmodule1.module_name}}</span></a>
+
+                        <!--</h6>-->
+
+                        <div ng-if="((alldefaultmodule1.module_id == module_id))" id="accordion-controls-group{{module_id}}"class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;" ng-repeat="submoduledatavalue in submoduledata" >
+                                <ul style="list-style: none;margin:0px;">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{submoduledatavalue.sub_mod_name}}</a></li>
+                                </ul>
+
+                                <!--Тon cupidatat skateboard dolor brunch. Тesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda.-->
+                            </div>
+                        </div>
+                        <a class="card-header header-elements-inline collapsed text-default" data-toggle="collapse" onclick="backcolor1()" id="alldefaultmodule2.module_id" style="color:white;" ng-click="getModuleId(alldefaultmodule2.module_id)" data-target="#accordion-controls-group{{alldefaultmodule2.module_id}}"><span><i class="icon-gift icon-1x">&nbsp;</i>{{alldefaultmodule2.module_name}}</span></a>
+                        <!--<a class="card-header header-elements-inline collapsed text-default" data-toggle="collapse" style="color:white;" ng-click="getModuleId(alldefaultmodule3.module_id)" data-target="#accordion-controls-group{{alldefaultmodule3.module_id}}"><i class="icon-store icon-1x">&nbsp;{{alldefaultmodule3.module_name}}</i></a>-->
+                        <!--<a class="card-header header-elements-inline collapsed text-default" data-toggle="collapse" style="color:white;" ng-click="getModuleId(alldefaultmodule4.module_id)" data-target="#accordion-controls-group{{alldefaultmodule4.module_id}}"><i class="icon-store icon-1x">&nbsp;{{alldefaultmodule4.module_name}}</i></a>-->
+                        <!--<a class="card-header header-elements-inline collapsed text-default" data-toggle="collapse" style="color:white;" ng-click="getModuleId(alldefaultmodule5.module_id)" data-target="#accordion-controls-group{{alldefaultmodule5.module_id}}"><i class="icon-store icon-1x">&nbsp;{{alldefaultmodule5.module_name}}</i></a>-->
+
+                        <div ng-if="((alldefaultmodule2.module_id == module_id))" id="accordion-controls-group{{moduledataValue2}}"class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;" ng-repeat="submoduledatavalue in submoduledata" >
+                                <ul style="list-style: none;margin:0px;">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{submoduledatavalue.sub_mod_name}}</a></li>
+                                </ul>
+
+                                <!--Тon cupidatat skateboard dolor brunch. Тesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda.-->
+                            </div>
+                        </div>
+                        <a class="card-header header-elements-inline collapsed text-default" data-toggle="collapse" style="color:white;" ng-click="getModuleId(alldefaultmodule3.module_id)" onclick="backcolor2()" ng-if="(loginIdData.email == 1)" id="alldefaultmodule3.module_id" data-target="#accordion-controls-group{{alldefaultmodule3.module_id}}"><span><i class="icon-paw icon-1x">&nbsp;</i>{{alldefaultmodule3.module_name}}</span></a>
+                        <!--<a class="card-header header-elements-inline collapsed text-default" data-toggle="collapse" style="color:white;" ng-click="getModuleId(alldefaultmodule4.module_id)" data-target="#accordion-controls-group{{alldefaultmodule4.module_id}}"><i class="icon-store icon-1x">&nbsp;{{alldefaultmodule4.module_name}}</i></a>-->
+                        <!--<a class="card-header header-elements-inline collapsed text-default" data-toggle="collapse" style="color:white;" ng-click="getModuleId(alldefaultmodule5.module_id)" data-target="#accordion-controls-group{{alldefaultmodule5.module_id}}"><i class="icon-store icon-1x">&nbsp;{{alldefaultmodule5.module_name}}</i></a>-->
+                        <div ng-if="((alldefaultmodule3.module_id == module_id))" id="accordion-controls-group{{moduledataValue3}}"class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;" ng-repeat="submoduledatavalue in submoduledata" >
+                                <ul style="list-style: none;margin:0px;">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{submoduledatavalue.sub_mod_name}}</a></li>
+                                </ul>
+
+                                <!--Тon cupidatat skateboard dolor brunch. Тesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda.-->
+                            </div>
+                        </div>
+                        <a class="card-header header-elements-inline collapsed text-default" data-toggle="collapse" style="color:white;" ng-click="getModuleId(alldefaultmodule4.module_id)" onclick="backcolor3()" id="alldefaultmodule4.module_id" data-target="#accordion-controls-group{{alldefaultmodule4.module_id}}"><span><i class="icon-lab icon-1x">&nbsp;</i>{{alldefaultmodule4.module_name}}</span></a>
+                        <!--<a class="card-header header-elements-inline collapsed text-default" data-toggle="collapse" style="color:white;" ng-click="getModuleId(alldefaultmodule5.module_id)" data-target="#accordion-controls-group{{alldefaultmodule5.module_id}}"><i class="icon-store icon-1x">&nbsp;{{alldefaultmodule5.module_name}}</i></a>-->
+                        <div ng-if="((alldefaultmodule4.module_id == module_id))" id="accordion-controls-group{{moduledataValue4}}"class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;" ng-repeat="submoduledatavalue in submoduledata" >
+                                <ul style="list-style: none;margin:0px;">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{submoduledatavalue.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="card" ng-if="subsystem_iddata">
+                    <div style="color:white;">
+                        <!--<h6 class="card-title">-->
+                        <a data-toggle="collapse" ng-if="(systemmoduledatavalue2.module_id && (systemmoduledatavalue2.module_name == 'Purchase'))" ng-init="purchasemodule();"  id="systemdata1" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledatavalue2.module_id}}" style="color:white;"  ng-click="getModuleId(systemmoduledatavalue2.module_id);purchasemodule();"><span><i class="icon-cart-add2 icon-1x">&nbsp;</i>{{systemmoduledatavalue2.module_name}}</span></a>
+                        <!--</h6>-->
+                        <!--<a data-toggle="collapse" class="text-default"  href="#accordion-controls-group1" style="color:white;"><i class="icon-copy"></i> <span>{{systemmoduledata.module_name}}</span><button type="button" ng-click="getModuleId(systemmoduledata.module_id)">{{systemmoduledata.module_id}}</button></a>-->
+                        <div ng-if="(systemmoduledatavalue2.module_name == 'Purchase')" id="accordion-controls-group{{moduledataValue}}" class="collapse show" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="sub2 in submoduledata">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{sub2.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="(systemmoduledatavalue2.module_id && (systemmoduledatavalue2.module_name == 'Data Acquision'))" ng-init="dataAcquisionmodule();"  id="systemdata2" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledatavalue2.module_id}}" style="color:white;"  ng-click="getModuleId(systemmoduledatavalue2.module_id);dataAcquisionmodule();"><span><i class="fa fa-database">&nbsp;&nbsp;</i>{{systemmoduledatavalue2.module_name}}</span></a>
+                        <div ng-if="(systemmoduledatavalue2.module_name == 'Data Acquision')" id="accordion-controls-group{{moduledataDataAcquision}}" class="collapse show" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="sub2 in submoduledata">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Data Acquision</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="(systemmoduledatavalue2.module_id && (systemmoduledatavalue2.module_name == 'Utilization Setup'))" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledatavalue2.module_id}}" style="color:white;"  ng-click="getModuleId(systemmoduledatavalue2.module_id);dataAcquisionmodule();"><span><i class="fa fa-database">&nbsp;&nbsp;</i>{{systemmoduledatavalue2.module_name}}</span></a>
+                        <div ng-if="(systemmoduledatavalue2.module_name == 'Utilization Setup')" id="accordion-controls-group{{moduledataUtilizationValue}}" class="collapse show" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="sub2 in submoduledata">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{sub2.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="(systemmoduledatavalue2.module_id && (systemmoduledatavalue2.module_name == 'Evaluation Tool'))" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledatavalue2.module_id}}" style="color:white;"  ng-click="getModuleId(systemmoduledatavalue2.module_id);"><span><i class="fa fa-database">&nbsp;&nbsp;</i>{{systemmoduledatavalue2.module_name}}</span></a>
+                        <div ng-if="(systemmoduledatavalue2.module_name == 'Evaluation Tool')" id="accordion-controls-group{{moduleEvaluationTool1}}" class="collapse show" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="sub2 in submoduledata">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{sub2.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="(systemmoduledatavalue2.module_id && (systemmoduledatavalue2.module_name == 'In-House Service'))" ng-init="Inhouseservicemodule();"  id="systemdata3" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledatavalue2.module_id}}" style="color:white;"  ng-click="getModuleId(systemmoduledatavalue2.module_id);Inhouseservicemodule();"><span><i class="icon-box">&nbsp;</i>{{systemmoduledatavalue2.module_name}}</span></a>
+                        <div ng-if="(systemmoduledatavalue2.module_name == 'In-House Service')" id="accordion-controls-group{{moduledataInHouseService}}" class="collapse show" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="sub2 in submoduledata">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">In-House Service</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="(systemmoduledatavalue2.module_id && (systemmoduledatavalue2.module_name == 'Store'))" ng-init="storemodule();" id="systemdata4" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledatavalue2.module_id}}" style="color:white;"  ng-click="getModuleId(systemmoduledatavalue2.module_id);storemodule();"><span><i class="icon-store2">&nbsp;</i>{{systemmoduledatavalue2.module_name}}</span></a>
+                        <div ng-if="(systemmoduledatavalue2.module_name == 'Store')" id="accordion-controls-group{{moduledataStore}}" class="collapse show" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="sub2 in submoduledata">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{sub2.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="(systemmoduledatavalue2.module_id && (systemmoduledatavalue2.module_name == 'Voucher'))" ng-init="vouchermodule();" id="systemdata5" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledatavalue2.module_id}}" style="color:white;"  ng-click="getModuleId(systemmoduledatavalue2.module_id);vouchermodule();"><span><i class="mi-announcement"><span style="margin-left:10px;">&nbsp;&nbsp;</span></i>{{systemmoduledatavalue2.module_name}}</span></a>
+                        <div ng-if="(systemmoduledatavalue2.module_name == 'Voucher')" id="accordion-controls-group{{module_iddataVoucher}}" class="collapse show" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="sub2 in submoduledata">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Voucher </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="(systemmoduledatavalue2.module_id && (systemmoduledatavalue2.module_name == 'IPS'))" ng-init="IPSmodule();" id="systemdata6" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledatavalue2.module_id}}" style="color:white;"  ng-click="getModuleId(systemmoduledatavalue2.module_id);IPSmodule();"><span>&nbsp;&nbsp;<i class="icon-person">&nbsp;</i>{{systemmoduledatavalue2.module_name}}</span></a>
+                        <div ng-if="(systemmoduledatavalue2.module_name == 'IPS')" id="accordion-controls-group{{module_iddataIPS}}" class="collapse show" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="sub2 in submoduledata">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">IPS</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="(systemmoduledatavalue2.module_id && (systemmoduledatavalue2.module_name == 'System Configuration'))" ng-init="Systemconfmodule();" id="systemdata7" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledatavalue2.module_id}}" style="color:white;"  ng-click="getModuleId(systemmoduledatavalue2.module_id);Systemconfmodule();"><span>&nbsp;&nbsp;<i class="icon-person">&nbsp;</i>{{systemmoduledatavalue2.module_name}}</span></a>
+                        <div ng-if="(systemmoduledatavalue2.module_name == 'System Configuration')" id="accordion-controls-group{{module_iddataSystemConfiguration}}" class="collapse show" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;">
+                                    <li class="nav-item"><a ng-href="/Admin/hotel/" style="color:white;padding:0.35rem;" class="nav-link">Hotel</a></li>
+                                    <!--<li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{submoduledataSystemConfig2.sub_mod_name}}</a></li>-->
+
+                                </ul>
+                                <ul style="list-style: none;margin:0px;">
+                                    <!--<li class="nav-item"><a ng-href="/Admin/hotel/" style="color:white;padding:0.35rem;" class="nav-link">Hotel</a></li>-->
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{submoduledataSystemConfig2.sub_mod_name}}</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="(systemmoduledatavalue2.module_id && (systemmoduledatavalue2.module_name == 'Article Creation'))" ng-init="Articlemodule();" id="systemdata8" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledatavalue2.module_id}}" style="color:white;"  ng-click="getModuleId(systemmoduledatavalue2.module_id);Articlemodule();"><span><i class="icon-file-plus">&nbsp;</i>{{systemmoduledatavalue2.module_name}}</span></a>
+                        <div ng-if="(systemmoduledatavalue2.module_name == 'Article Creation')" id="accordion-controls-group{{module_iddataArticleCreation}}" class="collapse show" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="sub2 in submoduledata">
+                                    <li class="nav-item"><a ng-href="/Admin/article/" style="color:white;padding:0.35rem;" class="nav-link">{{sub2.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="card" ng-if="subsystem_iddata">
+                    <div style="color:white;">
+                        <a data-toggle="collapse" ng-if="((systemmoduledata1.module_id) && (systemmoduledata1.module_name == 'Vendor Management'))" onclick="backcolor4();" id="system1" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata1.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata1.module_id)"><span><i class="fab fa-discord">&nbsp;&nbsp;</i>{{systemmoduledata1.module_name}}</span></a>
+                        <div ng-if="((systemmoduledata1.module_name == 'Vendor Management') && (systemmoduledata1.module_id == module_iddata))" id="accordion-controls-group{{module_iddata}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{subsystem2data.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata1.module_id) && (systemmoduledata1.module_name == 'Booking'))" onclick="backcolor5();" id="system2" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata1.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata1.module_id)"><span><i class="icon-calendar2">&nbsp;</i>{{systemmoduledata1.module_name}}</span></a>
+                        <div ng-if="((systemmoduledata1.module_name == 'Booking') && (systemmoduledata1.module_id == module_iddataBooking))" id="accordion-controls-group{{module_iddataBooking}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Booking</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata1.module_id) && (systemmoduledata1.module_name == 'Audit'))" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata1.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata1.module_id)"><span><i class="icon-calendar2">&nbsp;</i>{{systemmoduledata1.module_name}}</span></a>
+                        <div ng-if="((systemmoduledata1.module_name == 'Audit') && (systemmoduledata1.module_id == auditDataValue))" id="accordion-controls-group{{auditDataValue}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{subsystem2data.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata1.module_id) && (systemmoduledata1.module_name == 'Production'))" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata1.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata1.module_id)"><span><i class="icon-calendar2">&nbsp;</i>{{systemmoduledata1.module_name}}</span></a>
+                        <div ng-if="((systemmoduledata1.module_name == 'Production') && (systemmoduledata1.module_id == productiondatavalue))" id="accordion-controls-group{{systemmoduledata1.module_id}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{subsystem2data.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata1.module_id) && (systemmoduledata1.module_name == 'In-House Service'))" onclick="backcolor11();" id="system8" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata1.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata1.module_id)"><span><i class="icon-box">&nbsp;</i>In house Services</span></a>
+                        <div ng-if="((systemmoduledata1.module_name == 'In-House Service') && (systemmoduledata1.module_id == module_iddataInhouseService2))" id="accordion-controls-group{{module_iddataInhouseService2}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">In house Services</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata1.module_id) && (systemmoduledata1.module_name == 'Contract Service'))" onclick="backcolor8();" id="system5" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata1.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata1.module_id)"><span><i class="icon-wrench">&nbsp;</i>Contract Service</span></a>
+                        <div ng-if="((systemmoduledata1.module_name == 'Contract Service') && (systemmoduledata1.module_id == module_iddataContractService2))" id="accordion-controls-group{{module_iddataContractService2}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Contract Service</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata1.module_id) && (systemmoduledata1.module_name == 'Budget'))" onclick="backcolor14();" id="system12" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata1.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata1.module_id)"><span><i class="icon-coin-yen">&nbsp;</i>Budget</span></a>
+                        <div ng-if="((systemmoduledata1.module_name == 'Budget') && (systemmoduledata1.module_id == module_iddataBudget))" id="accordion-controls-group{{module_iddataBudget}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Budget</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata1.module_id) && (systemmoduledata1.module_name == 'Utilization Setup'))" onclick="backcolor16();" id="system15" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata1.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata1.module_id)"><span><i class="icon-collaboration">&nbsp;</i>Utilization Setup</span></a>
+                        <div ng-if="((systemmoduledata1.module_name == 'Utilization Setup') && (systemmoduledata1.module_id == module_iddataUtilizationSetup))" id="accordion-controls-group{{module_iddataUtilizationSetup}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Utilization Setup</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata1.module_id) && (systemmoduledata1.module_name == 'Store'))" onclick="backcolor20();" id="system19" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata1.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata1.module_id)"><span><i class="icon-store2">&nbsp;</i>Store</span></a>
+                        <div ng-if="((systemmoduledata1.module_name == 'Store') && (systemmoduledata1.module_id == module_iddataStore3))" id="accordion-controls-group{{module_iddataStore3}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{subsystem2data.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata1.module_id) && (systemmoduledata1.module_name == 'User Configuration'))" onclick="backcolor19()" id="system18" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata1.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata1.module_id)"><span><i class="icon-collaboration">&nbsp;</i>User Configuration</span></a>
+                        <div ng-if="((systemmoduledata1.module_name == 'User Configuration') && (systemmoduledata1.module_id == module_iddataUserConfiguration))" id="accordion-controls-group{{module_iddataUserConfiguration}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;">
+                                    <li class="nav-item"><a ng-if="(loginIdData.email == '1')" ng-href="/Admin/employee/" style="color:white;padding:0.35rem;" class="nav-link">{{submoduledatauserconfig1.sub_mod_name}}</a></li>
+                                    <li class="nav-item"><a ng-if="(loginIdData.email != '1')" href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Employee</a></li>
+
+                                    <!--<li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{submoduledatauserconfig2.sub_mod_name}}</a></li>-->
+                                    <!--<li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{submoduledatauserconfig3.sub_mod_name}}</a></li>-->
+                                </ul>
+                                <ul style="list-style: none;margin:0px;">
+                                    <!--<li class="nav-item"><a ng-if="(loginIdData.email == '1')" ng-href="/Admin/employee/" style="color:white;padding:0.35rem;" class="nav-link">{{submoduledatauserconfig1.sub_mod_name}}</a></li>-->
+                                    <!--<li class="nav-item"><a ng-if="(loginIdData.email != '1')" href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Employee</a></li>-->
+
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{submoduledatauserconfig2.sub_mod_name}}</a></li>
+                                    <!--<li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{submoduledatauserconfig3.sub_mod_name}}</a></li>-->
+                                </ul>
+                                <ul style="list-style: none;margin:0px;">
+                                    <!--<li class="nav-item"><a ng-if="(loginIdData.email == '1')" ng-href="/Admin/employee/" style="color:white;padding:0.35rem;" class="nav-link">{{submoduledatauserconfig1.sub_mod_name}}</a></li>-->
+                                    <!--<li class="nav-item"><a ng-if="(loginIdData.email != '1')" href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Employee</a></li>-->
+
+                                    <!--<li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{submoduledatauserconfig2.sub_mod_name}}</a></li>-->
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{submoduledatauserconfig3.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <a data-toggle="collapse" ng-if="((systemmoduledata2.module_id) && (systemmoduledata2.module_name == 'Evaluation Tool'))" onclick="backcolor6();" id="system3" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata2.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata2.module_id)"><span><i class="icon-stats-growth">&nbsp;</i>{{systemmoduledata2.module_name}}</span></a>
+                        <div ng-if="((systemmoduledata2.module_name == 'Evaluation Tool') && (systemmoduledata2.module_id == module_iddataEvaluationTool))" id="accordion-controls-group{{module_iddataEvaluationTool}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Evaluation Tool</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata2.module_id) && (systemmoduledata2.module_name == 'Production'))" onclick="backcolor21();" id="system20" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata2.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata2.module_id)"><span><i class="icon-gift">&nbsp;</i>{{systemmoduledata2.module_name}}</span></a>
+                        <div ng-if="((systemmoduledata2.module_name == 'Production') && (systemmoduledata2.module_id == module_iddataProduction))" id="accordion-controls-group{{module_iddataProduction}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{subsystem2data.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata2.module_id) && (systemmoduledata2.module_name == 'Contract Service'))" onclick="backcolor12()" id="system9" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata2.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata2.module_id)"><span><i class="icon-wrench">&nbsp;</i>Contract Service</span></a>
+                        <div ng-if="((systemmoduledata2.module_name == 'Contract Service') && (systemmoduledata2.module_id == module_iddataContractService))" id="accordion-controls-group{{module_iddataContractService}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled  class="nav-link">Contract Service</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata2.module_id) && (systemmoduledata2.module_name == 'Reports'))" onclick="backcolor9()" id="system6" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata2.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata2.module_id)"><span><i class="icon-podium">&nbsp;</i>Reports</span></a>
+                        <div ng-if="((systemmoduledata2.module_name == 'Reports') && (systemmoduledata2.module_id == module_iddataReports2))" id="accordion-controls-group{{module_iddataReports2}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Reports</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata2.module_id) && (systemmoduledata2.module_name == 'Audit'))" class="card-header header-elements-inline text-default" onclick="backcolor15()" id="system13" data-target="#accordion-controls-group{{systemmoduledata2.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata2.module_id)"><span><i class="mi-transfer-within-a-station">&nbsp;</i><span style="margin-left:10px;">Audit</span></span></a>
+                        <div ng-if="((systemmoduledata2.module_name == 'Audit') && (systemmoduledata2.module_id == module_iddataAudit))" id="accordion-controls-group{{module_iddataAudit}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Audit</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata2.module_id) && (systemmoduledata2.module_name == 'Bar Inventory'))" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata2.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata2.module_id)"><span><i class="mi-transfer-within-a-station">&nbsp;</i><span style="margin-left:10px;">{{systemmoduledata2.module_name}}</span></span></a>
+                        <div ng-if="((systemmoduledata2.module_name == 'Bar Inventory') && (systemmoduledata2.module_id == bardatamodule1))" id="accordion-controls-group{{systemmoduledata2.module_id}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{subsystem2data.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata2.module_id) && (systemmoduledata2.module_name == 'Tracking'))" onclick="backcolor17()" id="system16" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata2.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata2.module_id)"><span><i class="icon-paw">&nbsp;</i>Tracking</span></a>
+                        <div ng-if="((systemmoduledata2.module_name == 'Tracking') && (systemmoduledata2.module_id == module_iddataTracking))" id="accordion-controls-group{{module_iddataTracking}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Tracking</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <a data-toggle="collapse" ng-if="((systemmoduledata3.module_id) && (systemmoduledata3.module_name == 'Proximity Marketing'))" onclick="backcolor7();" id="system4" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata3.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata3.module_id)"><span><i class="mi-settings-system-daydream">&nbsp;</i><span style="margin-left:10px;">Proximity Marketing</span></span></a>
+                        <div ng-if="((systemmoduledata3.module_name == 'Proximity Marketing') && (systemmoduledata3.module_id == module_iddataProximityMarketing))" id="accordion-controls-group{{module_iddataProximityMarketing}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Proximity Marketing</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata3.module_id == '19') && (systemmoduledata3.module_name == 'Reports'))" onclick="backcolor13();" id="system10" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata3.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata3.module_id)"><span><i class="icon-podium">&nbsp;</i>Reports</span></a>
+                        <div ng-if="((systemmoduledata3.module_name == 'Reports') && (systemmoduledata3.module_id == module_iddataReports))" id="accordion-controls-group{{module_iddataReports}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Reports</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata3.module_id == '20') && (systemmoduledata3.module_name == 'Reports'))" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata3.module_id}}" style="color:white;" ng-click="getModuleIdsystem23(systemmoduledata3.module_id)"><span><i class="icon-podium">&nbsp;</i>{{systemmoduledata3.module_name}}</span></a>
+                        <div ng-if="((systemmoduledata3.module_id == '20') && (systemmoduledata3.module_id == module_iddataReports3))" id="accordion-controls-group{{module_iddataReports3}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{subsystem2data.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata3.module_id == '16') && (systemmoduledata3.module_name == 'Reports'))" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{module_iddataReportsValue}}" style="color:white;" ng-click="getModuleIdsystem23(systemmoduledata3.module_id)"><span><i class="icon-podium">&nbsp;</i>{{systemmoduledata3.module_name}}</span></a>
+                        <div ng-if="((systemmoduledata3.module_id == '16') && (systemmoduledata3.module_id == module_iddataReportsValue))" id="accordion-controls-group{{module_iddataReportsValue}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{subsystem2data.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata3.module_id == '27') && (systemmoduledata3.module_name == 'Report'))" onclick="backcolor18()" id="system17" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata3.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata3.module_id)"><span><i class="icon-podium">&nbsp;</i>Report</span></a>
+                        <div ng-if="((systemmoduledata3.module_name == 'Report') && (systemmoduledata3.module_id == module_iddataReports4))" id="accordion-controls-group{{module_iddataReports4}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Report</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata3.module_id) && (systemmoduledata3.module_name == 'Store'))" onclick="backcolor10();" id="system7" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata3.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata3.module_id)"><span><i class="icon-store2">&nbsp;</i>Store</span></a>
+                        <div ng-if="((systemmoduledata3.module_name == 'Store') && (systemmoduledata3.module_id == module_iddataStore2))" id="accordion-controls-group{{module_iddataStore2}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">Store</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" ng-if="((systemmoduledata3.module_id) && (systemmoduledata3.module_name == 'Material Tracking'))" onclick="backcolor22();" id="system21" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata3.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata3.module_id)"><span><i class="icon-paw">&nbsp;</i>Material Tracking</span></a>
+                        <div ng-if="((systemmoduledata3.module_name == 'Material Tracking') && (systemmoduledata3.module_id == module_iddataMaterialTracking))" id="accordion-controls-group{{module_iddataMaterialTracking}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{subsystem2data.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <a data-toggle="collapse" ng-if="((systemmoduledata4.module_id) && (systemmoduledata4.module_name == 'Bar Inventory'))" onclick="backcolor23();" id="system22" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata4.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata4.module_id)"><span><i class="icon-lab">&nbsp;</i>Bar Inventory</span></a>
+                        <div ng-if="((systemmoduledata4.module_name == 'Bar Inventory') && (systemmoduledata4.module_id == module_iddataBarInventory))" id="accordion-controls-group{{module_iddataBarInventory}}" class="collapse" data-parent="#accordion-controls">
+                            <div class="card-body" style="padding:0.02rem;">
+                                <ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledatavalue1">
+                                    <li class="nav-item"><a href="#" style="color:white;padding:0.35rem;" ng-disabled class="nav-link">{{subsystem2data.sub_mod_name}}</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--<a data-toggle="collapse" ng-if="(systemmoduledata2.module_id)" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata2.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata2.module_id)"><i class="fab fa-discord">&nbsp;&nbsp;<span style="font-size:15px;">{{systemmoduledata2.module_name}}</span></i></a>-->
+                        <!--<div ng-if="(systemmoduledata2.module_id == module_iddata1)" id="accordion-controls-group{{module_iddata1}}" class="collapse" data-parent="#accordion-controls">-->
+                        <!--<div class="card-body" style="padding:0.02rem;">-->
+                        <!--<ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledata">-->
+                        <!--<li class="nav-item"><a href="../../../../layout_2/LTR/default/full/index.html" style="color:white;padding:0.35rem;" class="nav-link">{{subsystem2data.sub_mod_name}}</a></li>-->
+                        <!--</ul>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<a data-toggle="collapse" ng-if="systemmoduledata3.module_id" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata3.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata3.module_id)"><i class="fab fa-discord">&nbsp;&nbsp;<span style="font-size:15px;">{{systemmoduledata3.module_name}}</span></i></a>-->
+                        <!--<div ng-if="(systemmoduledata3.module_id == module_iddata2)" id="accordion-controls-group{{module_iddata2}}" class="collapse" data-parent="#accordion-controls">-->
+                        <!--<div class="card-body" style="padding:0.02rem;">-->
+                        <!--<ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledata">-->
+                        <!--<li class="nav-item"><a href="../../../../layout_2/LTR/default/full/index.html" style="color:white;padding:0.35rem;" class="nav-link">{{subsystem2data.sub_mod_name}}</a></li>-->
+                        <!--</ul>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--<a data-toggle="collapse" ng-if="systemmoduledata4.module_id" class="card-header header-elements-inline text-default" data-target="#accordion-controls-group{{systemmoduledata4.module_id}}" style="color:white;" ng-click="getModuleIdsystem2(systemmoduledata4.module_id)"><i class="fab fa-discord">&nbsp;&nbsp;<span style="font-size:15px;">{{systemmoduledata4.module_name}}</span></i></a>-->
+                        <!--<div ng-if="(systemmoduledata4.module_id == module_iddata3)" id="accordion-controls-group{{module_iddata3}}" class="collapse" data-parent="#accordion-controls">-->
+                        <!--<div class="card-body" style="padding:0.02rem;">-->
+                        <!--<ul style="list-style: none;margin:0px;" ng-repeat="subsystem2data in submoduledata">-->
+                        <!--<li class="nav-item"><a href="../../../../layout_2/LTR/default/full/index.html" style="color:white;padding:0.35rem;" class="nav-link">{{subsystem2data.sub_mod_name}}</a></li>-->
+                        <!--</ul>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+            <!-- /main navigation -->
+
+        </div>
+        <!-- /sidebar content -->
+
+    </div>
+
+    <!-- / sidebar-content -->
+
+    <!-- content-wrapper -->
+    <div class="content-wrapper">
+
+        <!-- Page header -->
+        <div class="page-header page-header-light fixed-top" style="margin-top: 50px;">
+            <div class="page-header-content header-elements-md-inline">
+                <div class="page-title d-flex">
+                    <h4><a ng-href="/Admin/" class="icon-arrow-left52 mr-2" ></a> <span class="font-weight-semibold">Over Group</span></h4>
+                    <a  class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+                </div>
+                <!--All Subsystem-->
+                <div class="header-elements d-none pull-right" ng-init="loginId();" >
+                    <div class="d-flex justify-content-center" >
+                        <a href="#" class="btn btn-link btn-float text-default" ng-if="subsystemfirst" ng-click="systembuttondata(subsystemfirst.subsystem_id);systembuttondata2(subsystemfirst.subsystem_id)"><i class="mi-widgets mr-3 mi-1x"></i><span style="font-size:12px;">Material Control</span></a>
+                        <a href="#" class="btn btn-link btn-float text-default" ng-if="subsystemsecond" ng-click="systembuttondata(subsystemsecond.subsystem_id);systembuttondata2(subsystemsecond.subsystem_id)"><i class="icon-cabinet mr-3 icon-1x"></i> <span style="font-size:12px;">Procurement</span></a>
+                        <a href="#" class="btn btn-link btn-float text-default" ng-if="subsystemthird" ng-click="systembuttondata(subsystemthird.subsystem_id);systembuttondata2(subsystemthird.subsystem_id)"><i class="fas fa-bullhorn mr-3 fa-1x"></i><span style="font-size:12px;">Marketing</span></a>
+                        <a href="#" class="btn btn-link btn-float text-default" ng-if="subsystemfourth" ng-click="systembuttondata(subsystemfourth.subsystem_id);systembuttondata2(subsystemfourth.subsystem_id)"><i class="mi-local-laundry-service mr-3 mi-1x"></i> <span style="font-size:12px;">Utility</span></a>
+                        <a href="#" class="btn btn-link btn-float text-default" ng-if="subsystemfive" ng-click="systembuttondata(subsystemfive.subsystem_id);systembuttondata2(subsystemfive.subsystem_id)"><i class="mi-shopping-cart mr-3 mi-1x"></i><span style="font-size:12px;">House Keeping</span></a>
+                        <a href="#" class="btn btn-link btn-float text-default" ng-if="subsystemsix" ng-click="systembuttondata(subsystemsix.subsystem_id);systembuttondata2(subsystemsix.subsystem_id)"><i class="mi-account-balance mr-3 mi-1x"></i> <span style="font-size:12px;">Financial</span></a>
+                        <a href="#" class="btn btn-link btn-float text-default" ng-if="subsystemseven" ng-click="systembuttondata(subsystemseven.subsystem_id);systembuttondata2(subsystemseven.subsystem_id)"><i class="mi-people mr-3 mi-1x"></i><span style="font-size:12px;">Man Power</span></a>
+                        <a href="#" class="btn btn-link btn-float text-default" ng-if="subsystemeight" ng-click="systembuttondata(subsystemeight.subsystem_id);systembuttondata2(subsystemeight.subsystem_id)"><i class="icon-cogs mr-3 icon-1x"></i> <span style="font-size:12px;">SetUp</span></a>
+                    </div>
+                </div>
+                <!--All Subsystem-->
+            </div>
+
+
+        </div>
+        <!-- / page header -->
+
+        <!-- container -->
+        <div class="content" style="padding-right:0px;">
+            <!--<div class="card" style="margin-top: 110px;margin-left:276px;">-->
+            <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline" style="margin-top: 110px;margin-left:256px;">
+                <div class="d-flex">
+                    <div class="breadcrumb" style="padding-top:5px;padding-bottom: 5px;">
+                        <!--Add Over Group Button-->
+                        <button type="button" data-toggle="modal" data-target="#AddoverGroup" class="btn btn-primary btn-sm"><i class="icon-add mr-2"></i>Add Over Group</button>
+                        <!--Add Over Group Button-->
+                    </div>
+
+                    <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+                </div>
+
+            </div>
+            <!--</div>-->
+            <!-- Start Table -->
+            <div class="card" style="margin-top:10px;margin-left:256px;">
+
+                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer"><div class="datatable-header">
+                    <!--Search-->
+                    <div id="DataTables_Table_0_filter" class="dataTables_filter">
+                        <label><input type="search" class="" placeholder="Over Group Name" aria-controls="DataTables_Table_0"></label>
+                    </div>
+                    <!--Search-->
+
+                </div>
+                    <!--Table Data Dropdown-->
+
+                    <div class="datatable-scroll-wrap">
+                        <!--Table-->
+                        <table class="table datatable-responsive dataTable no-footer dtr-inline" id="myTable2" role="grid" aria-describedby="DataTables_Table_0_info">
+                            <thead id="shortTable">
+                            <tr role="row">
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1"  aria-label="Status: activate to sort column ascending" onclick="sortTable(0)">Assigned To</th>
+                                <th class="sorting" tabindex="1" aria-controls="DataTables_Table_1" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" onclick="sortTable(1)">Over Group Name</th>
+                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" onclick="sortTable(2)">Status</th>
+                                <th class="text-center sorting_disabled" rowspan="1" colspan="1" style="width: 100px;" aria-label="Action">Action</th></tr>
+                            </thead>
+
+                            <tbody>
+                            <tr role="row" class="odd">
+                                <td tabindex="0" class="sorting_1">Expenses</td>
+                                <td>Engineering</td>
+                                <td><span class="badge badge-primary">Active</span></td>
+
+                                <td class="text-center">
+                                    <div class="list-icons">
+                                        <div class="dropdown">
+                                            <a href="#" class="list-icons-item" data-toggle="dropdown">
+                                                <i class="icon-menu9"></i>
+                                            </a>
+                                            <!--dropdown-->
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupDetail" ><i class="icon-newspaper"></i>View Details</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#editOverGroup"><i class="icon-pencil5"></i>Edit</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupStatus" ><i class="icon-file-check"></i>Change Status</a>
+                                            </div>
+                                            <!--dropdown-->
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr><tr role="row" class="even">
+                                <td tabindex="0" class="sorting_2">Expenses</td>
+                                <td>General</td>
+                                <td><span class="badge badge-secondary">InActive</span></td>
+                                <td class="text-center">
+                                    <div class="list-icons">
+                                        <div class="dropdown">
+                                            <a href="#" class="list-icons-item" data-toggle="dropdown">
+                                                <i class="icon-menu9"></i>
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupDetail" ><i class="icon-newspaper"></i>View Details</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#editOverGroup"><i class="icon-pencil5"></i>Edit</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupStatus" ><i class="icon-file-check"></i>Change Status</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr><tr role="row" class="odd">
+                                <td tabindex="0" class="sorting_1">Expenses</td>
+                                <td>Engineering</td>
+                                <td><span class="badge badge-primary">Active</span></td>
+                                <td class="text-center">
+                                    <div class="list-icons">
+                                        <div class="dropdown">
+                                            <a href="#" class="list-icons-item" data-toggle="dropdown">
+                                                <i class="icon-menu9"></i>
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupDetail" ><i class="icon-newspaper"></i>View Details</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#editOverGroup"><i class="icon-pencil5"></i>Edit</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupStatus" ><i class="icon-file-check"></i>Change Status</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr><tr role="row" class="even">
+                                <td tabindex="0" class="sorting_1">Expenses</td>
+                                <td>General</td>
+                                <td><span class="badge badge-primary">Active</span></td>
+                                <td class="text-center">
+                                    <div class="list-icons">
+                                        <div class="dropdown">
+                                            <a href="#" class="list-icons-item" data-toggle="dropdown">
+                                                <i class="icon-menu9"></i>
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupDetail" ><i class="icon-newspaper"></i>View Details</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#editOverGroup"><i class="icon-pencil5"></i>Edit</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupStatus" ><i class="icon-file-check"></i>Change Status</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr><tr role="row" class="odd">
+                                <td tabindex="0" class="sorting_1">Expenses</td>
+                                <td>General</td>
+                                <td><span class="badge badge-secondary">InActive</span></td>
+
+                                <td class="text-center">
+                                    <div class="list-icons">
+                                        <div class="dropdown">
+                                            <a href="#" class="list-icons-item" data-toggle="dropdown">
+                                                <i class="icon-menu9"></i>
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupDetail" ><i class="icon-newspaper"></i>View Details</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#editOverGroup"><i class="icon-pencil5"></i>Edit</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupStatus" ><i class="icon-file-check"></i>Change Status</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr><tr role="row" class="even">
+                                <td tabindex="0" class="sorting_1">Profit Contribution</td>
+                                <td>Food</td>
+                                <td><span class="badge badge-primary">Active</span></td>
+                                <!-- <td><span class="badge badge-secondary">Inactive</span></td> -->
+                                <td class="text-center">
+                                    <div class="list-icons">
+                                        <div class="dropdown">
+                                            <a href="#" class="list-icons-item" data-toggle="dropdown">
+                                                <i class="icon-menu9"></i>
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupDetail" ><i class="icon-newspaper"></i>View Details</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#editOverGroup"><i class="icon-pencil5"></i>Edit</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupStatus" ><i class="icon-file-check"></i>Change Status</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr><tr role="row" class="odd">
+                                <td tabindex="0" class="sorting_1">Profit Contribution</td>
+                                <td>Food</td>
+                                <td><span class="badge badge-primary">Active</span></td>
+                                <!-- <td><span class="badge badge-success">Active</span></td> -->
+                                <td class="text-center">
+                                    <div class="list-icons">
+                                        <div class="dropdown">
+                                            <a href="#" class="list-icons-item" data-toggle="dropdown">
+                                                <i class="icon-menu9"></i>
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupDetail" ><i class="icon-newspaper"></i>View Details</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#editOverGroup"><i class="icon-pencil5"></i>Edit</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupStatus" ><i class="icon-file-check"></i>Change Status</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr><tr role="row" class="even">
+                                <td tabindex="0" class="sorting_1">Expenses</td>
+                                <td>Beverage</td>
+                                <td><span class="badge badge-secondary">InActive</span></td>
+                                <!-- <td><span class="badge badge-danger">Suspended</span></td> -->
+                                <td class="text-center">
+                                    <div class="list-icons">
+                                        <div class="dropdown">
+                                            <a href="#" class="list-icons-item" data-toggle="dropdown">
+                                                <i class="icon-menu9"></i>
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupDetail" ><i class="icon-newspaper"></i>View Details</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#editOverGroup"><i class="icon-pencil5"></i>Edit</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupStatus" ><i class="icon-file-check"></i>Change Status</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr><tr role="row" class="odd">
+                                <td tabindex="0" class="sorting_1">Profit Contribution</td>
+                                <td>Food</td>
+                                <td><span class="badge badge-primary">Active</span></td>
+                                <!-- <td><span class="badge badge-success">Active</span></td> -->
+                                <td class="text-center">
+                                    <div class="list-icons">
+                                        <div class="dropdown">
+                                            <a href="#" class="list-icons-item" data-toggle="dropdown">
+                                                <i class="icon-menu9"></i>
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupDetail" ><i class="icon-newspaper"></i>View Details</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#editOverGroup"><i class="icon-pencil5"></i>Edit</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupStatus" ><i class="icon-file-check"></i>Change Status</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr><tr role="row" class="even">
+                                <td tabindex="0" class="sorting_1">Profit Contribution</td>
+                                <td>Food</td>
+                                <td><span class="badge badge-primary">Active</span></td>
+                                <!-- <td><span class="badge badge-info">Pending</span></td> -->
+                                <td class="text-center">
+                                    <div class="list-icons">
+                                        <div class="dropdown">
+                                            <a href="#" class="list-icons-item" data-toggle="dropdown">
+                                                <i class="icon-menu9"></i>
+                                            </a>
+
+                                            <div class="dropdown-menu dropdown-menu-right">
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupDetail" ><i class="icon-newspaper"></i>View Details</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#editOverGroup"><i class="icon-pencil5"></i>Edit</a>
+                                                <a href="#" class="dropdown-item" data-toggle="modal" data-target="#overGroupStatus" ><i class="icon-file-check"></i>Change Status</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr></tbody>
+                        </table></div>
+                    <!--Table-->
+                </div>
+            </div>
+
+            <!-- / close Table -->
+
+
+        </div>
+        <!-- / container -->
+
+        <!-- AddoverGroup modal -->
+        <div id="AddoverGroup" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-info" >
+                        <h6 class="modal-title">Add Over Group</h6>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Over Group Name:</label>
+                                    <input type="text" class="form-control" placeholder="Over Group Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Assigned To:</label>
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option value="opt1">Expenses</option>
+                                            <option value="opt2">Profit Contribution</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                                <div class="form-group mb-3 mb-md-2">
+                                    <div class="row">
+                                        <label class="d-block">&nbsp;&nbsp;Status:&nbsp;&nbsp;</label>
+                                        <div class="custom-control custom-control-right custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="custom-inline-radio-right" id="custom_radio_inline_right_checkedvalue" checked>
+                                            <label class="custom-control-label position-static" for="custom_radio_inline_right_checkedvalue">Active</label>
+                                        </div>
+
+                                        <div class="custom-control custom-control-right custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input" name="custom-inline-radio-right" id="custom_radio_inline_right_uncheckedvalue">
+                                            <label class="custom-control-label position-static" for="custom_radio_inline_right_uncheckedvalue">InActive</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            <!--</div>-->
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn bg-info">Save</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /AddoverGroup modal -->
+
+        <!-- editOverGroup modal -->
+        <div id="editOverGroup" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-info">
+                        <h6 class="modal-title">Edit Over Group</h6>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Over Group Name:</label>
+                                    <input type="text" class="form-control" placeholder="Over Group Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Assigned To:</label>
+                                    <div class="form-group">
+                                        <select class="form-control">
+                                            <option value="opt1">Expenses</option>
+                                            <option value="opt2">Profit Contribution</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn bg-info">Update</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- /editOverGroup modal -->
+
+        <!-- overGroupStatus modal -->
+        <div id="overGroupStatus" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-info">
+                        <h6 class="modal-title">Edit Status</h6>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form action="#">
+
+                            <div class="row">
+                                <!--<div class="col-md-1"></div>-->
+                                <div class="col-md-3">
+                                    <label >Status :</label>
+                                </div>
+                                <div class="form-group mb-3 mb-md-2">
+                                    <div class="custom-control custom-control-right custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="custom-inline-radio-right" id="custom_radio_inline_right_checkeddata" checked>
+                                        <label class="custom-control-label position-static" for="custom_radio_inline_right_checkeddata">Active</label>
+                                    </div>
+
+                                    <div class="custom-control custom-control-right custom-radio custom-control-inline">
+                                        <input type="radio" class="custom-control-input" name="custom-inline-radio-right" id="custom_radio_inline_right_uncheckeddata">
+                                        <label class="custom-control-label position-static" for="custom_radio_inline_right_uncheckeddata">InActive</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-3"></div>
+                                <div class="col-md-2 mb-3 mb-md-2">
+                                    <button type="button" class="btn bg-info">Update</button>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- /overGroupStatus modal -->
+
+        <!-- overGroupDetail modal -->
+        <div id="overGroupDetail" class="modal fade" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-info">
+                        <h6 class="modal-title">Over Group Detail</h6>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table datatable-responsive-column-controlled">
+                            <tbody>
+                            <tr>
+                                <th>Over Group Name</th>
+                                <th> :<span style="font-weight: 300;">Over Group Name</span></th>
+                            </tr>
+                            <tr>
+                                <th>Assigned To</th>
+                                <th> :<span style="font-weight: 300;">Assigned To</span></th>
+                            </tr>
+                            <tr>
+                                <th>Changed By</th>
+                                <th> :<span style="font-weight: 300;">Changed By </span></th>
+                            </tr>
+                            <tr>
+                                <th>Changed Date</th>
+                                <th> :<span style="font-weight: 300;">Changed Date</span></th>
+                            </tr>
+
+                            <tr>
+                                <th>Status</th>
+                                <th> :<span style="font-weight: 300;">Active</span></th>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /overGroupDetail modal -->
+    </div>
+    <!-- / content-wrapper -->
+</div>
+
+
+<script>
+    //    Sorting Table
+    function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementById("myTable2");
+        switching = true;
+        // Set the sorting direction to ascending:
+        dir = "asc";
+        /* Make a loop that will continue until
+        no switching has been done: */
+        while (switching) {
+            // Start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /* Loop through all table rows (except the
+            first, which contains table headers): */
+            for (i = 1; i < (rows.length - 1); i++) {
+                // Start by saying there should be no switching:
+                shouldSwitch = false;
+                /* Get the two elements you want to compare,
+                one from current row and one from the next: */
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                /* Check if the two rows should switch place,
+                based on the direction, asc or desc: */
+                if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        // If so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        // If so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+                /* If a switch has been marked, make the switch
+                and mark that a switch has been done: */
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                // Each time a switch is done, increase this count by 1:
+                switchcount ++;
+            } else {
+                /* If no switching has been done AND the direction is "asc",
+                set the direction to "desc" and run the while loop again. */
+                if (switchcount == 0 && dir == "asc") {
+                    dir = "desc";
+                    switching = true;
+                }
+            }
+        }
+    };
+    <!--Sorting Table-->
+
+    //Active Module
+    function store1() {
+        document.getElementById("store1").style.backgroundColor = "#2196f3";
+        document.getElementById("hotelsystem1").style.backgroundColor = "#263238";
+        document.getElementById("production1").style.backgroundColor = "#263238";
+        document.getElementById("materialTracking1").style.backgroundColor = "#263238";
+        document.getElementById("barInventory1").style.backgroundColor = "#263238";
+    };
+    function articlehotel() {
+        document.getElementById("hotelsystem1").style.backgroundColor = "#2196f3";
+        document.getElementById("store1").style.backgroundColor = "#263238";
+        document.getElementById("production1").style.backgroundColor = "#263238";
+        document.getElementById("materialTracking1").style.backgroundColor = "#263238";
+        document.getElementById("barInventory1").style.backgroundColor = "#263238";
+    };
+    function production1() {
+        document.getElementById("hotelsystem1").style.backgroundColor = "#263238";
+        document.getElementById("store1").style.backgroundColor = "#263238";
+        document.getElementById("production1").style.backgroundColor = "#2196f3";
+        document.getElementById("materialTracking1").style.backgroundColor = "#263238";
+        document.getElementById("barInventory1").style.backgroundColor = "#263238";
+    };
+    function materialTracking1() {
+        document.getElementById("hotelsystem1").style.backgroundColor = "#263238";
+        document.getElementById("store1").style.backgroundColor = "#263238";
+        document.getElementById("production1").style.backgroundColor = "#263238";
+        document.getElementById("materialTracking1").style.backgroundColor = "#2196f3";
+        document.getElementById("barInventory1").style.backgroundColor = "#263238";
+    };
+    function barInventory1() {
+        document.getElementById("hotelsystem1").style.backgroundColor = "#263238";
+        document.getElementById("store1").style.backgroundColor = "#263238";
+        document.getElementById("production1").style.backgroundColor = "#263238";
+        document.getElementById("materialTracking1").style.backgroundColor = "#263238";
+        document.getElementById("barInventory1").style.backgroundColor = "#2196f3";
+    };
+
+    function purchasehotel1() {
+        document.getElementById("purchasehotel1").style.backgroundColor = "#2196f3";
+        document.getElementById("vendor1").style.backgroundColor = "#263238";
+    };
+    function vendor1() {
+        document.getElementById("purchasehotel1").style.backgroundColor = "#263238";
+        document.getElementById("vendor1").style.backgroundColor = "#2196f3";
+    };
+    function hoteluserdata() {
+        document.getElementById("hotelSystemdata").style.backgroundColor = "#263238";
+        document.getElementById("hoteluserdata").style.backgroundColor = "#2196f3";
+    };
+    function userdata1() {
+        document.getElementById("systemdatavalue1").style.backgroundColor = "#263238";
+        document.getElementById("userdata1").style.backgroundColor = "#2196f3";
+    };
+    function storedata2() {
+        document.getElementById("hotelsystemdata1").style.backgroundColor = "#263238";
+        document.getElementById("storedata2").style.backgroundColor = "#2196f3";
+        document.getElementById("hotelrelateddata1").style.backgroundColor = "#263238";
+        document.getElementById("material1").style.backgroundColor = "#263238";
+        document.getElementById("barInventorydata1").style.backgroundColor = "#263238";
+    };
+    function hotelrelateddata1() {
+        document.getElementById("hotelsystemdata1").style.backgroundColor = "#263238";
+        document.getElementById("hotelrelateddata1").style.backgroundColor = "#2196f3";
+        document.getElementById("storedata2").style.backgroundColor = "#263238";
+        document.getElementById("material1").style.backgroundColor = "#263238";
+        document.getElementById("barInventorydata1").style.backgroundColor = "#263238";
+    };
+    function material1() {
+        document.getElementById("hotelsystemdata1").style.backgroundColor = "#263238";
+        document.getElementById("hotelrelateddata1").style.backgroundColor = "#263238";
+        document.getElementById("storedata2").style.backgroundColor = "#263238";
+        document.getElementById("material1").style.backgroundColor = "#2196f3";
+        document.getElementById("barInventorydata1").style.backgroundColor = "#263238";
+    };
+    function barInventorydata1() {
+        document.getElementById("hotelsystemdata1").style.backgroundColor = "#263238";
+        document.getElementById("hotelrelateddata1").style.backgroundColor = "#263238";
+        document.getElementById("storedata2").style.backgroundColor = "#263238";
+        document.getElementById("material1").style.backgroundColor = "#263238";
+        document.getElementById("barInventorydata1").style.backgroundColor = "#2196f3";
+
+    };
+    function bookingdatavalue1() {
+        document.getElementById("dataAcquision1").style.backgroundColor = "#263238";
+        document.getElementById("bookingdatavalue1").style.backgroundColor = "#2196f3";
+        document.getElementById("evalutionTooldata1").style.backgroundColor = "#263238";
+        document.getElementById("proximitymarketingdata1").style.backgroundColor = "#263238";
+    };
+    function evalutionTooldata1() {
+        document.getElementById("dataAcquision1").style.backgroundColor = "#263238";
+        document.getElementById("bookingdatavalue1").style.backgroundColor = "#263238";
+        document.getElementById("evalutionTooldata1").style.backgroundColor = "#2196f3";
+        document.getElementById("proximitymarketingdata1").style.backgroundColor = "#263238";
+    };
+    function proximitymarketingdata1() {
+        document.getElementById("dataAcquision1").style.backgroundColor = "#263238";
+        document.getElementById("bookingdatavalue1").style.backgroundColor = "#263238";
+        document.getElementById("evalutionTooldata1").style.backgroundColor = "#263238";
+        document.getElementById("proximitymarketingdata1").style.backgroundColor = "#2196f3";
+
+    };
+    //Active Module
+</script>
+
+<!--Date: 08/08/2019-->
+<!--Artcle-->
